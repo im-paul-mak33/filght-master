@@ -85,9 +85,9 @@ const ReservationTable: React.FC<guestProps> = ({ guestList, Guest }) => {
   const CheckGuest = async (id: string) => {
     const data = await Guest(id);
     if (data.guestInfo.length <= 0) {
-      router.push(`/sales/${id}/GuestInfo`);
+      router.push(`/reservation/${id}/guestInfoReservation`);
     } else {
-      router.push(`/sales/${id}`);
+      router.push(`/reservation/${id}`);
     }
   };
 

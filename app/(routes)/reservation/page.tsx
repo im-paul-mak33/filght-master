@@ -8,6 +8,7 @@ import { Guest } from "@prisma/client";
 import { getSingleGuest } from "@/actions/getSingleGuest";
 import ReservationTable from "@/components/Custom/Table/ReservationTable";
 
+
 const page = async () => {
   const guestList = await getGuestList();
 
