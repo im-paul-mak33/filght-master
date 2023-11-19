@@ -168,13 +168,13 @@ const SalesForm: FC<IdProps> = ({ id }) => {
         });
       }
 
-      if (res.ok) {
-        setOpen(false);
-        router.push(`/sales/${id}/Itinerary`);
-        toast({
-          title: "Guest info form created successfully",
-        });
-      }
+      // if (res.ok) {
+      //   setOpen(false);
+      //   router.push(`/sales/${id}/Itinerary`);
+      //   toast({
+      //     title: "Guest info form created successfully",
+      //   });
+      // }
     } catch (error) {
       console.log(error);
     } finally {
@@ -208,7 +208,7 @@ const SalesForm: FC<IdProps> = ({ id }) => {
             <form
               autoComplete="off"
               autoCorrect="off"
-              onSubmit={form.handleSubmit(onSubmit)}
+              // onSubmit={form.handleSubmit(onSubmit)}
               className="space-y-6 "
             >
               <div className="flex gap-2 w-full items-center">

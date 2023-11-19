@@ -9,6 +9,7 @@ import { format } from "date-fns";
 
 export interface IParams {
   reservationid: string;
+  params:string
 }
 
 const page = async ({ params }: { params: IParams }) => {
@@ -26,49 +27,49 @@ const page = async ({ params }: { params: IParams }) => {
       sr: 2,
       status: guestUser && guestUser.itinerary.length <= 0 ? false : true,
       Stages: " Itinerary or Day Plans Form",
-      href: `/reservation/${params.reservationid}/Itinerary`,
+      href: `/reservation/${params.reservationid}/ItineraryReservation`,
     },
     {
       id: params.reservationid,
       sr: 3,
       status: guestUser && guestUser.roomBooking.length <= 0 ? false : true,
       Stages: " Room Booking Form",
-      href: `/reservation/${params.reservationid}/RoomBooking`,
+      href: `/reservation/${params.reservationid}/RoomBookingReservation`,
     },
     {
       id: params.reservationid,
       sr: 4,
       status: guestUser && guestUser.cruise.length <= 0 ? false : true,
       Stages: "Cruise Requisition Form",
-      href: `/reservation/${params.reservationid}/Cruise`,
+      href: `/reservation/${params.reservationid}/CruiseReservation`,
     },
     {
       id: params.reservationid,
       sr: 5,
       status: guestUser && guestUser.vehical.length <= 0 ? false : true,
       Stages: "Vehicle Requisition Form",
-      href: `/reservation/${params.reservationid}/Vehical`,
+      href: `/reservation/${params.reservationid}/VehicleReservation`,
     },
     {
       id: params.reservationid,
       sr: 6,
       status: guestUser && guestUser.discount.length <= 0 ? false : true,
       Stages: "Complimentary / Discounted Activities Form",
-      href: `/reservation/${params.reservationid}/DiscountedActivty`,
+      href: `/reservation/${params.reservationid}/DiscountReservation`,
     },
     {
       id: params.reservationid,
       sr: 7,
       status: guestUser && guestUser?.flight?.length <= 0 ? false : true,
       Stages: "Flight Details Form",
-      href: `/reservation/${params.reservationid}/FilghtDetails`,
+      href: `/reservation/${params.reservationid}/FlightReservation`,
     },
     {
       id: params.reservationid,
       sr: 8,
       status: guestUser && guestUser.fiberboat.length <= 0 ? false : true,
       Stages: "Fiber Boat Requisition Form",
-      href: `/reservation/${params.reservationid}/FiberBoat`,
+      href: `/reservation/${params.reservationid}/FiberBoatReservation`, 
     },
   ];
 

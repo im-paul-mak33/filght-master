@@ -142,9 +142,11 @@ export const columns: ColumnDef<StageFormProps>[] = [
     header: "Actions",
     cell: ({ row }) => {
       const payment = row.original;
+      console.log(row);
+      
       return (
         <>
-          {row.original.status === true && (
+          {row.original.status === false && (
             <Link href={row.original.href}>
               <Button className="text-primary  hover:!text-white shadow-md bg-sky-100 h-max py-1  flex gap-2 hover:!bg-primary">
                 <LogIn className="w-4 h-4" />

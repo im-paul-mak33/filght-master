@@ -1,11 +1,10 @@
-"use client"
 import DeskNav from "@/components/Custom/Navbar/DeskNav";
 import { ArrowLeftCircle } from "lucide-react";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
 import SalesForm from "../components/Form1/SalesForm";
 import { IParams } from "../page";
 import GuestInfo from "../components/previewData/GuestInfo";
+import Guest from "../components/previewData/Guest";
 
 interface ReservationData {
   Channel: string;
@@ -33,31 +32,6 @@ interface ReservationData {
 
 const page = ({ params }: { params: IParams }) => {
 
-  const [apiData, setApiData] = useState<ReservationData | null>(null);
-
-  useEffect(() => {
-    const fetchGuestInfo = async () => {
-      try {
-        // Fetch data from your Next.js API endpoint based on the provided reservationid
-        const response = await fetch(`/api/guestInfo/${params.reservationid}`);
-        if (response.ok) {
-          const data = await response.json();
-          // Set the fetched data to the state
-      
-            setApiData(data);
-        
-        } else {
-          throw new Error('Failed to fetch data');
-        }
-      } catch (error) {
-        // Handle errors if any
-        console.error('Error fetching data:', error);
-      }
-    };
-
-    fetchGuestInfo();
-  }, [params.reservationid]); // Re-run effect when reservationid changes
-
   
   return (
     <>
@@ -72,9 +46,7 @@ const page = ({ params }: { params: IParams }) => {
       </div>
       <div className="px-8 py-2 bg-gray-50">
         <SalesForm id={params.reservationid} />
-        <div>
-          {apiData?.Channel}
-        </div>
+        <Guest paramsid={params.reservationid}/>
       </div>
     </>
   );
