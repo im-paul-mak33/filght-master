@@ -44,15 +44,25 @@ export async function DELETE(request: Request, { params }: { params: IParams }) 
 
 export async function GET(request: Request, { params }: { params: IParams }) {
     const session = await getServerSession(authOptions);
-    if (session?.user.role !== "admin" && session?.user.role !== "sales") {
-        return new NextResponse("user not authorized", { status: 404 });
-    }
+    // if (session?.user.role !== "admin" && session?.user.role !== "sales") {
+    //     return new NextResponse("user not authorized", { status: 404 });
+    // }
 
     try {
         const guest = await prisma.guest.findUnique({
             where: {
                 id: params.id
-            }
+            },
+            include: {
+                guestInfo: true,
+                itinerary: true,
+                roomBooking: true,
+                cruise: true,
+                discount: true,
+                vehical: true,
+                flight: true,
+                fiberboat: true,
+              },
         })
 
         return NextResponse.json(guest);
@@ -65,32 +75,84 @@ export async function GET(request: Request, { params }: { params: IParams }) {
 }
 
 
-// export  async function GET(
-//     req: NextApiRequest,
-//     res: NextApiResponse
-//   ) {
-//     if (req.method !== 'GET') {
-//       return res.status(405).json({ message: 'Method Not Allowed' });
-//     }
+export async function PUT(request: Request, { params }: { params: IParams }) {
+    const session = await getServerSession(authOptions);
+    // if (session?.user.role !== "admin" && session?.user.role !== "sales") {
+    //     return new NextResponse("user not authorized", { status: 404 });
+    // }
+
+    try {
+        const requestBody = await request.json(); // Parse the request body as JSON
+
+        // Ensure the required fields 'name' and 'points' exist in the request body
+        const { name, points , filledDate , bookedDate } = requestBody;
+        if (!name || !points) {
+          return new NextResponse('Invalid request body', { status: 400 });
+        }
+
+        // Update the Guest record
+        // const updatedGuest = await prisma.guest.update({
+        //   where: {
+        //     id: params.id,
+        //   },
+        //   data: {
+        //     name,
+        //     points: parseFloat(points),
+        //   },
+        //   include: {
+        //     guestInfo: true, // Include associated GuestInfo records
+        //     itinerary: true, // Include
+        //   },
+        // });
+
+        const updatedGuest = await prisma.guest.update({
+            where: {
+              id: params.id,
+            },
+            data: {
+              name,
+              points: parseFloat(points),
+              filledDate: new Date(filledDate),
+              bookedDate: new Date(bookedDate),
+              guestInfo: {
+                deleteMany: {}, // Delete associated GuestInfo records
+              },
+              itinerary: {
+                deleteMany: {}, // Delete associated Itinerary records
+              },
+              roomBooking:{
+                deleteMany:{}
+              },
+              cruise:{
+                deleteMany:{}
+              },
+              discount:{
+              deleteMany:{}  
+              },
+              vehical:{
+                deleteMany:{}
+              },
+              flight:{
+                deleteMany:{}
+              },
+              fiberboat:{
+                deleteMany:{}
+              }
+            },
+            include: {
+              guestInfo: true, // Include associated GuestInfo records in the response
+              itinerary: true, // Include associated Itinerary records in the response
+            },
+          });
+        return NextResponse.json({
+            updatedGuest,
+          });
+    } catch (error) {
+        console.log(error);
+        return new NextResponse(`Error: ${error}`, { status: 404 });
+    }
+
+}
+
+
   
-//     const { id } = req.query;
-  
-//     try {
-//       const guestInfo = await prisma.guestInfo.findUnique({
-//         where: {
-//           id: id as string,
-//         },
-//       });
-  
-//       if (!guestInfo) {
-//         return res.status(404).json({ message: 'Guest not found' });
-//       }
-  
-//       res.status(200).json(guestInfo);
-//     } catch (error) {
-//       console.error(error);
-//       res.status(500).json({ message: 'Internal Server Error' });
-//     } finally {
-//       await prisma.$disconnect();
-//     }
-//   }  

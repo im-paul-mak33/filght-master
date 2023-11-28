@@ -85,11 +85,21 @@ const SalesTable: React.FC<guestProps> = ({ guestList, Guest }) => {
   const CheckGuest = async (id: string) => {
     const data = await Guest(id);
     if (data.guestInfo.length <= 0) {
-      router.push(`/sales/${id}/GuestInfo`);
+      router.push(`/sales/${id}`);
     } else {
       router.push(`/sales/${id}`);
     }
   };
+
+  const editGuest = async (id: string) => {
+      router.push(`/sales/${id}/EditUser`);
+  };
+
+  const editFormData = async (id: string) => {
+    router.push(`/sales/${id}/EditFormData`);
+};
+
+
 
   useEffect(() => {
     if (!open) {
@@ -121,6 +131,32 @@ const SalesTable: React.FC<guestProps> = ({ guestList, Guest }) => {
       return res.json();
     }
   };
+
+
+  const EditGuest = async (id: string) =>{
+    const res = await fetch(`/api/guest/user/${id}`,{
+      method:"PUT",
+      headers:{
+        "Content-Type": "application/json",
+      }
+    })
+
+    if (!res.ok) {
+      toast({
+        title: "Sales requisition form is not deleted server error",
+        variant: "destructive",
+      });
+    }
+
+    if (res.ok) {
+      router.refresh();
+      toast({
+        title: "User Edit SuccessFully",
+        variant: "default",
+      });
+      return res.json();
+    }
+  }
   const columns: ColumnDef<Guest>[] = [
     {
       accessorKey: "name",
@@ -226,7 +262,7 @@ const SalesTable: React.FC<guestProps> = ({ guestList, Guest }) => {
                 <DropdownMenuItem className="pr-10 cursor-pointer hover:!bg-success hover:!text-white">
                   <DialogTrigger
                     onClick={() => {
-                      setids(row.original.id);
+                      editFormData(row.original.id);
                     }}
                     asChild
                   >
@@ -235,6 +271,13 @@ const SalesTable: React.FC<guestProps> = ({ guestList, Guest }) => {
                       <span>Edit Form data</span>
                     </div>
                   </DialogTrigger>
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={() => editGuest(row.original.id)}
+                  className="pr-10 cursor-pointer hover:!bg-primary hover:!text-white"
+                >
+                  <UserPlus2 className="mr-2 h-4 w-4" />
+                  <span>Edit  User </span>
                 </DropdownMenuItem>
                 <DropdownMenuItem
                   onClick={() => DeleteGuest(row.original.id)}
@@ -277,7 +320,7 @@ const SalesTable: React.FC<guestProps> = ({ guestList, Guest }) => {
       columnFilters,
       columnVisibility,
       rowSelection,
-    },
+    },    
   });
 
   return (
@@ -297,7 +340,7 @@ const SalesTable: React.FC<guestProps> = ({ guestList, Guest }) => {
         <Dialog open={open} onOpenChange={setOpen}>
           <DialogTrigger asChild>
             <Button type="button" className="bg-primary hover:bg-primary">
-              <UserPlus2 /> Add new guest
+              <UserPlus2/> Add new guest
             </Button>
           </DialogTrigger>
 

@@ -50,9 +50,12 @@ const page = async (props: Props) => {
 
   let [data]: any = guestUser?.guestInfo || [];
 
+  
+
   const startDate = data && format(new Date(data.dateOfArrival), "PP");
   const endDate = data && format(new Date(data.dateOfDeparture), "PP");
   let dateActivities = generateDateActivityArray(startDate, endDate);
+
 
   return (
     <>

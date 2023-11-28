@@ -69,6 +69,8 @@ export const Iternairyform: FC<ItenaryInputProps> = ({
   const [open, setOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState<DateActivity[]>(dateData);
+  console.log(data);
+  
 
   const onSubmit = async () => {
     setIsLoading(true);

@@ -1,6 +1,8 @@
 "use client"
 import { Book, Building2, Plane, User2, Users2 } from 'lucide-react';
 import React, { FC, useEffect, useState } from 'react'
+import { IParams } from "../../page";
+import DeskNav from '@/components/Custom/Navbar/DeskNav';
 type ItenaryInputProps = {
     paramsid: string;
   };
@@ -28,14 +30,14 @@ type ItenaryInputProps = {
     guestId: string;
   }
   
-const Guest:FC<ItenaryInputProps> = ( paramsid)=> {
+const Guest= ( { params }: { params: IParams })=> {
     const [apiData, setApiData] = useState<GuestInformation | null>(null);
 
     useEffect(() => {
       const fetchGuestInfo = async () => {
         try {
           // Fetch data from your Next.js API endpoint based on the provided reservationid
-          const response = await fetch(`/api/Forms/guestInfo/${paramsid.paramsid}`);
+          const response = await fetch(`/api/Forms/guestInfo/${params.salesid}`);
           if (response.ok) {
             const data = await response.json();
             // Set the fetched data to the state
@@ -52,14 +54,13 @@ const Guest:FC<ItenaryInputProps> = ( paramsid)=> {
       };
   
       fetchGuestInfo();
-    }, [paramsid.paramsid]); // Re-run effect when reservationid changes
+    }, [params.salesid]); // Re-run effect when reservationid changes
   return (
-    <div>
-        <div className='flex items-center justify-center mt-10'>
-            Reviewed your Data <hr />
-        </div>
+    <>
+       <DeskNav/>
+    <div className='  flex flex-col ml-32'>
         
-        <div className="flex gap-10  flex-col">
+        <div className="flex gap-10  flex-col ">
         <div className="font-semibold items-center flex gap-4 text-xl text-primary">
                 <div className=" shadow-xl p-2 bg-primary rounded-full">
                   <Book className="h-5 w-5  text-white" />
@@ -185,6 +186,7 @@ const Guest:FC<ItenaryInputProps> = ( paramsid)=> {
               
             </article>
     </div>
+    </>
   )
 }
 export default Guest

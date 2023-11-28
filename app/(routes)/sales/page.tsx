@@ -13,8 +13,9 @@ const page = async () => {
   const GetGuest = async (id: string) => {
     "use server";
     const getGuest = await getSingleGuest(id);
-    return getGuest;
+    return getGuest;  
   };
+
 
   return (
     <>

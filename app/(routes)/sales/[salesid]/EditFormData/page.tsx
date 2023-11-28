@@ -2,7 +2,7 @@ import DeskNav from "@/components/Custom/Navbar/DeskNav";
 import { ArrowLeftCircle } from "lucide-react";
 import Link from "next/link";
 import React, { FC } from "react";
-import { StageFormProps, StageTable } from "./Components/StageTable";
+import { StageFormProps, StageTable } from "../Components/StageTableEditForm";
 import { getSingleGuest } from "@/actions/getSingleGuest";
 import { GuestInfo } from "@prisma/client";
 import { format } from "date-fns";
@@ -20,7 +20,7 @@ const page = async ({ params }: { params: IParams }) => {
       status: guestUser && guestUser?.guestInfo?.length <= 0 ? false : true,
       Stages: "Guest info Form",
       href: `/sales/${params.salesid}/GuestInfo`,
-      hrefData:`/sales/${params.salesid}/ViewPage/Guestinfo`
+      hrefData:`/sales/${params.salesid}/EditPage/GuestInfo`
     },
     {
       id: params.salesid,
@@ -28,7 +28,7 @@ const page = async ({ params }: { params: IParams }) => {
       status: guestUser && guestUser.itinerary.length <= 0 ? false : true,
       Stages: " Itinerary or Day Plans Form",
       href: `/sales/${params.salesid}/Itinerary`,
-      hrefData:`/sales/${params.salesid}/ViewPage/Itinerary`
+      hrefData:`/sales/${params.salesid}/EditPage/Itinerary`
     },
     {
       id: params.salesid,
@@ -36,7 +36,7 @@ const page = async ({ params }: { params: IParams }) => {
       status: guestUser && guestUser.roomBooking.length <= 0 ? false : true,
       Stages: " Room Booking Form",
       href: `/sales/${params.salesid}/RoomBooking`,
-      hrefData:`/sales/${params.salesid}/ViewPage/RoomBooking`
+      hrefData:`/sales/${params.salesid}/EditPage/RoomBooking`
     },
     {
       id: params.salesid,
@@ -44,7 +44,7 @@ const page = async ({ params }: { params: IParams }) => {
       status: guestUser && guestUser.cruise.length <= 0 ? false : true,
       Stages: "Cruise Requisition Form",
       href: `/sales/${params.salesid}/Cruise`,
-      hrefData:`/sales/${params.salesid}/ViewPage/Cruise`
+      hrefData:`/sales/${params.salesid}/EditPage/Cruise`
     },
     {
       id: params.salesid,
@@ -52,7 +52,7 @@ const page = async ({ params }: { params: IParams }) => {
       status: guestUser && guestUser.vehical.length <= 0 ? false : true,
       Stages: "Vehicle Requisition Form",
       href: `/sales/${params.salesid}/Vehical`,
-      hrefData:`/sales/${params.salesid}/ViewPage/Vehical`
+      hrefData:`/sales/${params.salesid}/EditPage/Vehical`
     },
     {
       id: params.salesid,
@@ -60,7 +60,7 @@ const page = async ({ params }: { params: IParams }) => {
       status: guestUser && guestUser.discount.length <= 0 ? false : true,
       Stages: "Complimentary / Discounted Activities Form",
       href: `/sales/${params.salesid}/DiscountedActivty`,
-      hrefData:`/sales/${params.salesid}/ViewPage/DiscountedActivty`
+      hrefData:`/sales/${params.salesid}/EditPage/DiscountedActivty`
     },
     {
       id: params.salesid,
@@ -68,7 +68,7 @@ const page = async ({ params }: { params: IParams }) => {
       status: guestUser && guestUser?.flight?.length <= 0 ? false : true,
       Stages: "Flight Details Form",
       href: `/sales/${params.salesid}/FilghtDetails`,
-      hrefData:`/sales/${params.salesid}/ViewPage/FilghtDetails`,
+      hrefData:`/sales/${params.salesid}/EditPage/FilghtDetails`,
     },
     {
       id: params.salesid,
@@ -76,7 +76,7 @@ const page = async ({ params }: { params: IParams }) => {
       status: guestUser && guestUser.fiberboat.length <= 0 ? false : true,
       Stages: "Fiber Boat Requisition Form",
       href: `/sales/${params.salesid}/FiberBoat`,
-      hrefData:`/sales/${params.salesid}/ViewPage/FiberBoat`,
+      hrefData:`/sales/${params.salesid}/EditPage/FiberBoat`,
     },
   ];
 
@@ -99,7 +99,6 @@ const page = async ({ params }: { params: IParams }) => {
             <span className="font-semibold"> Name of guest :</span>{" "}
             {guestUser?.name}
           </div>
-
           <div className="p-4 w-max px-8  rounded-md border-[.5px] shadow-md">
             <span className="font-semibold"> Filed Date :</span>{" "}
             {guestUser && format(new Date(guestUser?.filledDate), "PP")}

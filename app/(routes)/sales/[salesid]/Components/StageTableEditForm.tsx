@@ -157,7 +157,7 @@ export const columns: ColumnDef<StageFormProps>[] = [
             <Link href={row.original.hrefData}>
               <Button className="text-primary  hover:!text-white shadow-md bg-sky-100 h-max py-1  flex gap-2 hover:!bg-primary">
                 <LogIn className="w-4 h-4" />
-                <p>View Page</p>
+                <p>Edit Page</p>
               </Button>
             </Link>
           )}
