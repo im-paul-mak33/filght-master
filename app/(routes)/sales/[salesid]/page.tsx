@@ -60,7 +60,7 @@ const page = async ({ params }: { params: IParams }) => {
       status: guestUser && guestUser.discount.length <= 0 ? false : true,
       Stages: "Complimentary / Discounted Activities Form",
       href: `/sales/${params.salesid}/DiscountedActivty`,
-      hrefData:`/sales/${params.salesid}/ViewPage/DiscountedActivty`
+      hrefData:`/sales/${params.salesid}/ViewPage/DiscountedActivity`
     },
     {
       id: params.salesid,
@@ -68,7 +68,7 @@ const page = async ({ params }: { params: IParams }) => {
       status: guestUser && guestUser?.flight?.length <= 0 ? false : true,
       Stages: "Flight Details Form",
       href: `/sales/${params.salesid}/FilghtDetails`,
-      hrefData:`/sales/${params.salesid}/ViewPage/FilghtDetails`,
+      hrefData:`/sales/${params.salesid}/ViewPage/FlightDetails`,
     },
     {
       id: params.salesid,
