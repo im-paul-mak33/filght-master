@@ -31,7 +31,7 @@ type ItenaryInputProps = {
   
 
 const Flight= ( { params }: { params: IParams }) => {
-    const [apiData, setApiData] = useState<FlightBooking | null>(null);
+    const [apiData, setApiData] = useState([]);
 
     useEffect(() => {
       const fetchGuestInfo = async () => {
@@ -89,22 +89,40 @@ const Flight= ( { params }: { params: IParams }) => {
         <TableBody>
           <TableRow>
             <TableCell>
-              {apiData?.time}
+              {/* {apiData?.time} */}
+              {apiData.map((el:any,i)=>(
+                <div>{el.time}</div>
+              ))}
             </TableCell>
             <TableCell>
-              {apiData?.arrival}
+              {/* {apiData?.arrival} */}
+              {apiData.map((el:any,i)=>(
+                <div>{el.arrival}</div>
+              ))}
             </TableCell>
             <TableCell>
-              {apiData?.flightno}
+              {/* {apiData?.flightno} */}
+              {apiData.map((el:any,i)=>(
+                <div>{el.flightno}</div>
+              ))}
             </TableCell>
             <TableCell>
-              {apiData?.deptcity}
+              {/* {apiData?.deptcity} */}
+              {apiData.map((el:any,i)=>(
+                <div>{el.deptcity}</div>
+              ))}
             </TableCell>
             <TableCell>
-              {apiData?.arrivalcity}
+              {/* {apiData?.arrivalcity} */}
+              {apiData.map((el:any,i)=>(
+                <div>{el.arrivalcity}</div>
+              ))}
             </TableCell>
             <TableCell>
-              {apiData?.PNR}
+              {/* {apiData?.PNR} */}
+              {apiData.map((el:any,i)=>(
+                <div>{el.PNR}</div>
+              ))}
             </TableCell>
           </TableRow>
         </TableBody>

@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 
 export async function GET(request: Request,{ params }: { params: {id:string} }) {
     try {
-       const guest = await prisma.flight.findFirst({
+       const guest = await prisma.flight.findMany({
         where:{
             guestId:params.id
         },

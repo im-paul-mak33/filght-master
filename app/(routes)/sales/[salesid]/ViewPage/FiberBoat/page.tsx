@@ -29,7 +29,7 @@ type ItenaryInputProps = {
   }
   
 const FiberBoat  = ( { params }: { params: IParams })=> {
-    const [apiData, setApiData] = useState<BoatBooking | null>(null);
+    const [apiData, setApiData] = useState([]);
 
     useEffect(() => {
       const fetchGuestInfo = async () => {
@@ -85,19 +85,34 @@ const FiberBoat  = ( { params }: { params: IParams })=> {
         <TableBody>
           <TableRow>
             <TableCell>
-              {apiData?.time}
+              {/* {apiData?.time} */}
+              {apiData.map((el:any,i)=>(
+                <div>{el.time}</div>
+              ))}
             </TableCell>
             <TableCell>
-              {apiData?.arrival}
+              {/* {apiData?.arrival}/ */}
+              {apiData.map((el:any,i)=>(
+                <div>{el.arrival}</div>
+              ))}
             </TableCell>
             <TableCell>
-              {apiData?.stay}
+              {/* {apiData?.stay} */}
+              {apiData.map((el:any,i)=>(
+                <div>{el.stay}</div>
+              ))}
             </TableCell>
             <TableCell>
-              {apiData?.service}
+              {/* {apiData?.service} */}
+              {apiData.map((el:any,i)=>(
+                <div>{el.service}</div>
+              ))}
             </TableCell>
             <TableCell>
-              {apiData?.boattype}
+              {/* {apiData?.boattype} */}
+              {apiData.map((el:any,i)=>(
+                <div>{el.boattype}</div>
+              ))}
             </TableCell>
           </TableRow>
         </TableBody>

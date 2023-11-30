@@ -34,7 +34,7 @@ const page = async (props: Props) => {
       <div className="px-8 py-4  h-[84vh] bg-gray-50">
         <CruiseForm id={props.params.reservationid} />
         <Cruise paramsid={props.params.reservationid}/>
-        
+  
       </div>
     </>
   );

@@ -28,7 +28,7 @@ type ItenaryInputProps = {
   }
   
  const Itinerary = ( { params }: { params: IParams }) => {
-    const [apiData, setApiData] = useState<Stay | null>(null);
+    const [apiData, setApiData] = useState([]);
 
     useEffect(() => {
       const fetchGuestInfo = async () => {
@@ -81,16 +81,36 @@ type ItenaryInputProps = {
             <TableBody>
               <TableRow>
                 <TableCell>
-                  {apiData?.date}
+
+                  {apiData.map((el:any,i)=>(
+                    <div>{
+                      el.guestId===params.salesid && <div>{el.date}</div>
+                      }</div>
+                  ))}
                 </TableCell>
                 <TableCell>
-                  {apiData?.day}
+                  {/* {apiData?.day} */}
+                  {apiData.map((el:any,i)=>(
+                    <div>{
+                      el.guestId===params.salesid && <div>{el.day}</div>
+                      }</div>
+                  ))}
                 </TableCell>
                 <TableCell>
-                  {apiData?.stay}
+                  {/* {apiData?.stay} */}
+                  {apiData.map((el:any,i)=>(
+                    <div>{
+                      el.guestId===params.salesid && <div>{el.stay}</div>
+                      }</div>
+                  ))}
                 </TableCell>
                 <TableCell>
-                  {apiData?.activity}
+                  {/* {apiData?.activity} */}
+                  {apiData.map((el:any,i)=>(
+                    <div>{
+                      el.guestId===params.salesid && <div>{el.activity}</div>
+                      }</div>
+                  ))}
                 </TableCell>
               </TableRow>
             </TableBody>

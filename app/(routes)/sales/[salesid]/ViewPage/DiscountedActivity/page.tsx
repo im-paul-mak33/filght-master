@@ -32,7 +32,7 @@ type ItenaryInputProps = {
   }
   
 const Discount = ( { params }: { params: IParams })  => {
-    const [apiData, setApiData] = useState<ActivityBooking | null>(null);
+    const [apiData, setApiData] = useState([]);
 
     useEffect(() => {
       const fetchGuestInfo = async () => {
@@ -100,31 +100,58 @@ const Discount = ( { params }: { params: IParams })  => {
             <TableBody>
               <TableRow>
                 <TableCell>
-                  {apiData?.Activies}
+                  {/* {apiData?.Activies} */}
+                  {apiData.map((el:any,i)=>(
+                <div>{el.Activies}</div>
+              ))}
                 </TableCell>
                 <TableCell>
-                  {apiData?.time}
+                  {/* {apiData?.time} */}
+                  {apiData.map((el:any,i)=>(
+                <div>{el.time}</div>
+              ))}
                 </TableCell>
                 <TableCell>
-                  {apiData?.date}
+                  {/* {apiData?.date} */}
+                  {apiData.map((el:any,i)=>(
+                <div>{el.date}</div>
+              ))}
                 </TableCell>
                 <TableCell>
-                  {apiData?.complimentary}
+                  {/* {apiData?.complimentary} */}
+                  {apiData.map((el:any,i)=>(
+                <div>{el.complimentary}</div>
+              ))}
                 </TableCell>
                 <TableCell>
-                  {apiData?.remark}
+                  {/* {apiData?.remark} */}
+                  {apiData.map((el:any,i)=>(
+                <div>{el.remark}</div>
+              ))}
                 </TableCell>
                 <TableCell>
-                  {apiData?.vehical_type}
+                  {/* {apiData?.vehical_type} */}
+                  {apiData.map((el:any,i)=>(
+                <div>{el.vehical_type}</div>
+              ))}
                 </TableCell>
                 <TableCell>
-                  {apiData?.service}
+                  {/* {apiData?.service} */}
+                  {apiData.map((el:any,i)=>(
+                <div>{el.service}</div>
+              ))}
                 </TableCell>
                 <TableCell>
-                  {apiData?.amount}
+                  {/* {apiData?.amount} */}
+                  {apiData.map((el:any,i)=>(
+                <div>{el.amount}</div>
+              ))}
                 </TableCell>
                 <TableCell>
-                  {apiData?.pax}
+                  {/* {apiData?.pax} */}
+                  {apiData.map((el:any,i)=>(
+                <div>{el.pax}</div>
+              ))}
                 </TableCell>
               </TableRow>
             </TableBody>

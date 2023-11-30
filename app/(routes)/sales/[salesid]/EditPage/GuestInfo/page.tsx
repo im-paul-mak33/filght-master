@@ -3,7 +3,7 @@ import { Book, Building2, Plane, User2, Users2 } from 'lucide-react';
 import React, { FC, useEffect, useState } from 'react'
 import { IParams } from "../../page";
 import DeskNav from '@/components/Custom/Navbar/DeskNav';
-import SalesForm from '../../Components/Form1/SalesForm';
+import GuestInfo from '../../Components/EditForm/GuestInfo';
 type ItenaryInputProps = {
     paramsid: string;
   };
@@ -59,7 +59,8 @@ const Guest= ( { params }: { params: IParams })=> {
   return (
     <>
        <DeskNav/>
-       <SalesForm id={params.salesid}/>
+       <GuestInfo id={params.salesid}/>
+       {/* <GuestInfo/> */}
     <div className='  flex flex-col ml-32 '>
         
         <div className="flex gap-10  flex-col ">

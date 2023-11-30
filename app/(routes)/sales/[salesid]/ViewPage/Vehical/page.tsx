@@ -27,7 +27,7 @@ type ItenaryInputProps = {
   }
   
 const Vehicle= ( { params }: { params: IParams }) => {
-    const [apiData, setApiData] = useState<Transportation | null>(null);
+    const [apiData, setApiData] = useState([]);
 
     useEffect(() => {
       const fetchGuestInfo = async () => {
@@ -80,16 +80,28 @@ const Vehicle= ( { params }: { params: IParams }) => {
         <TableBody>
           <TableRow>
             <TableCell>
-              {apiData?.place}
+              {/* {apiData?.place} */}
+              {apiData.map((el:any,i)=>(
+                <div>{el.place}</div>
+              ))}
             </TableCell>
             <TableCell>
-              {apiData?.service}
+              {/* {apiData?.service} */}
+              {apiData.map((el:any,i)=>(
+                <div>{el.service}</div>
+              ))}
             </TableCell>
             <TableCell>
-              {apiData?.ac_nonac}
+              {/* {apiData?.ac_nonac} */}
+              {apiData.map((el:any,i)=>(
+                <div>{el.ac_nonac}</div>
+              ))}
             </TableCell>
             <TableCell>
-              {apiData?.vehical_type}
+              {/* {apiData?.vehical_type} */}
+              {apiData.map((el:any,i)=>(
+                <div>{el.vehical_type}</div>
+              ))}
             </TableCell>
           </TableRow>
         </TableBody>

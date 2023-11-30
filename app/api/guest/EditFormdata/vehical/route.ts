@@ -1,14 +1,24 @@
 import prisma from "@/services/Prisma/prismadb"
 import { NextResponse } from "next/server";
 
-export async function GET(request: Request,{ params }: { params: {id:string} }) {
+export async function PUT(request: Request,{ params }: { params: {id:string} }) {
     try {
-       const guest = await prisma.roomBooking.findMany({
+        const requestBody = await request.json(); 
+        const {
+            place        ,
+  service      ,
+  ac_nonac     ,
+  vehical_type ,
+        } =requestBody;
+       const guest = await prisma.vehical.update({
         where:{
             guestId:params.id
         },
-        include: {
-            guest: true // Include related guest information
+        data:{
+            place        ,
+            service      ,
+            ac_nonac     ,
+            vehical_type ,
         }
        })
        if (!guest) {
