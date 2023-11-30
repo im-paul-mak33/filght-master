@@ -35,7 +35,7 @@ type ItenaryInputProps = {
     guestId: string;
     guest: Guest;
   }
- export const RoomBooking= ( { params }: { params: IParams }) => {
+ const RoomBooking= ( { params }: { params: IParams }) => {
     const [apiData, setApiData] = useState([]);
 
     useEffect(() => {
@@ -227,3 +227,4 @@ type ItenaryInputProps = {
   )
 }
 
+export default RoomBooking
