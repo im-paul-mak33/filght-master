@@ -90,19 +90,25 @@ const page = (props: Props)  => {
         onChange={(e) => setPoints(e.target.value)}
       />
 
-      <button onClick={(e)=>setDateActive((current)=>!current)}>Click to view Date</button>
+    {
+      dateActive ?  <button onClick={(e)=>setDateActive((current)=>!current)}>Click to close Date</button> :  <button onClick={(e)=>setDateActive((current)=>!current)}>Click to update Date</button>
+    }
+      {/* <button onClick={(e)=>setDateActive((current)=>!current)}>Click to update Date</button> */}
       {
-        dateActive ? <div className='flex flex-col'>
+        dateActive ? <div className='flex flex-col space-y-4'>
           
           <label className='font-light text-sm'>Guest Filled Date</label>
       <input type="date" placeholder='Filled Date'  className=' p-1 rounded-xl w-48 border border-black' value={filledDate} onChange={(e) => setFilledDate(e.target.value)} />
       <label className='font-light text-sm'>Guest Booked Date</label>
       <input type="date" placeholder='Booked Date'  className='p-1 rounded-xl w-48 border border-black' value={bookedDate} onChange={(e) => setBookedDate(e.target.value)}/>
-      <button className='w-48' onClick={handleDeleteUpdate}>Delete Update Guest</button>
+      <button className='w-48 ml-96 bg-blue-500 px-1 py-1 rounded-xl' onClick={handleDeleteUpdate}> Update  Guest</button>
+       <p className='text-red-800'>only name and point is editable <br /> evrery data you have already put will be lost and you have to start again putting data</p>
         </div> : ""
       }
-       
-      <button className='w-48 ml-96' onClick={handleUpdate}>Update Guest</button>
+      {
+        dateActive ? "":<button className='w-48 ml-96 bg-blue-500 px-1 py-1 rounded-xl' onClick={handleUpdate}>Update Guest</button>
+      } 
+      
     
  
     </div>
