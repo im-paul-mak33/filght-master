@@ -1,7 +1,7 @@
 import React from 'react'
 import Itinerary from '../../ViewPage/Itinerary/page' 
 import { IParams } from "../../page";
-import { Iternairyform } from '../../Components/Form2/Iternairyform';
+import Iternairy  from "../../Components/EditForm/Itineray";
 import { getSingleGuest } from '@/actions/getSingleGuest';
 import { format } from "date-fns";
 export type DateActivity = {
@@ -46,7 +46,7 @@ const page =async( { params }: { params: IParams }) => {
     <div>
       <Itinerary params={params}/>
       <div className='flex items-center justify-center'>Edit this  form </div>
-      <Iternairyform dateData={dateActivities} paramsid={params.salesid} />
+      <Iternairy  paramsid={params.salesid} />
     </div>
   )
 }

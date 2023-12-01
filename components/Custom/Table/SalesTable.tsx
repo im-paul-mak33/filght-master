@@ -259,18 +259,13 @@ const SalesTable: React.FC<guestProps> = ({ guestList, Guest }) => {
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuLabel>Change Actions</DropdownMenuLabel>
-                <DropdownMenuItem className="pr-10 cursor-pointer hover:!bg-success hover:!text-white">
-                  <DialogTrigger
-                    onClick={() => {
-                      editFormData(row.original.id);
-                    }}
-                    asChild
-                  >
+                <DropdownMenuItem  onClick={() =>editFormData(row.original.id)} className="pr-10 cursor-pointer hover:!bg-success hover:!text-white">
+                 
                     <div className=" flex items-center">
                       <UserCog2 className="mr-2 h-4 w-4" />
                       <span>Edit Form data</span>
                     </div>
-                  </DialogTrigger>
+                 
                 </DropdownMenuItem>
                 <DropdownMenuItem
                   onClick={() => editGuest(row.original.id)}

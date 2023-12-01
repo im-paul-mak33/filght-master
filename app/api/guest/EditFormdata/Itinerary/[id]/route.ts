@@ -12,8 +12,7 @@ export async function POST(request: Request, { params }: { params: { id: string 
       // Update the record matching the given ID (assuming each element in the array contains an 'id' field)
       await prisma.itinerary.update({
         where: {
-          id: id,
-          guestId:params.id,
+          id:id
         },
         data: {
           date,

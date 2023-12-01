@@ -68,7 +68,7 @@ const page = async ({ params }: { params: IParams }) => {
       status: guestUser && guestUser?.flight?.length <= 0 ? false : true,
       Stages: "Flight Details Form",
       href: `/sales/${params.salesid}/FilghtDetails`,
-      hrefData:`/sales/${params.salesid}/EditPage/FilghtDetails`,
+      hrefData:`/sales/${params.salesid}/EditPage/FlightDetails`,
     },
     {
       id: params.salesid,

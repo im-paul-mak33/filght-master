@@ -1,8 +1,8 @@
 import React from 'react'
-import { RoomBookingForm } from '../../Components/EditForm/RoomBooking'
+import RoomBookingForm  from '../../Components/EditForm/RoomBooking'
 import { getSingleGuest } from "@/actions/getSingleGuest";
 import { Props } from "../../Itinerary/page"
-import { RoomBooking } from '../../ViewPage/RoomBooking/page';
+import RoomBooking  from '../../ViewPage/RoomBooking/page';
 
 export type RoomBookingProps = {
   place?: string;
@@ -73,8 +73,7 @@ const page =  async(props: Props) => {
   return (
     <div>
       <RoomBooking params={props.params}/>
-      <RoomBookingForm paramsid={props.params.salesid}
-          RoomTableData={dataArray}/>
+      <RoomBookingForm id={props.params.salesid}/>
     </div>
   )
 }

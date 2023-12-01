@@ -1,10 +1,13 @@
 import prisma from "@/services/Prisma/prismadb"
 import { NextResponse } from "next/server";
 
-export async function PUT(request: Request,{ params }: { params: {id:string} }) {
+export async function POST(request: Request,{ params }: { params: {id:string} }) {
     try {
-        const requestBody = await request.json(); 
-        const {
+        const inputData = await request.json();
+
+        // Loop through the input array and update the records in the database
+        for (const data of inputData) {
+          const { id, 
             Activies     ,
             time          ,
             date          ,
@@ -13,11 +16,10 @@ export async function PUT(request: Request,{ params }: { params: {id:string} }) 
             vehical_type  ,
             service       ,
             amount        ,
-            pax           ,
-        } =requestBody;
-       const guest = await prisma.discount.update({
+            pax           ,  } = data;
+      await prisma.discount.update({
         where:{
-            guestId:params.id
+            id:id
         },
         data:{
             Activies     ,
@@ -31,10 +33,8 @@ export async function PUT(request: Request,{ params }: { params: {id:string} }) 
             pax           ,
         }
        })
-       if (!guest) {
-        return new NextResponse("Itinerary not found", { status: 404 });
     }
-    return NextResponse.json(guest, { status: 200 });
+    return NextResponse.json('Data updated successfully');
     } catch (error) {
         console.log(error, "Register error");
         return new NextResponse("internal error", { status: 400 });

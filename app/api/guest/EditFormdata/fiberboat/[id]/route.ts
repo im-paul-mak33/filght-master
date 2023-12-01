@@ -1,19 +1,21 @@
 import prisma from "@/services/Prisma/prismadb"
 import { NextResponse } from "next/server";
 
-export async function PUT(request: Request,{ params }: { params: {id:string} }) {
+export async function POST(request: Request,{ params }: { params: {id:string} }) {
     try {
-        const requestBody = await request.json(); 
-        const {
+        const inputData = await request.json();
+
+        // Loop through the input array and update the records in the database
+        for (const data of inputData) {
+          const { id, 
             time    ,
             arrival  ,
             stay     ,
             service  ,
-            boattype ,
-        } =requestBody;
-       const guest = await prisma.fiberboat.update({
+            boattype ,} = data;
+        await prisma.fiberboat.update({
         where:{
-            guestId:params.id
+            id:id
         },
         data:{
             time    ,
@@ -23,10 +25,9 @@ export async function PUT(request: Request,{ params }: { params: {id:string} }) 
             boattype ,
         }
        })
-       if (!guest) {
-        return new NextResponse("Itinerary not found", { status: 404 });
     }
-    return NextResponse.json(guest, { status: 200 });
+
+    return NextResponse.json('Data updated successfully');
     } catch (error) {
         console.log(error, "Register error");
         return new NextResponse("internal error", { status: 400 });

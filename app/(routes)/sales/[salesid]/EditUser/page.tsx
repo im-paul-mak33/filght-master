@@ -4,6 +4,7 @@ import React from 'react'
 import { Props } from "../Itinerary/page";
 import { useRouter } from "next/navigation";
 import DeskNav from '@/components/Custom/Navbar/DeskNav';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
 const page = (props: Props)  => {
   const [name, setName] = useState('');
@@ -91,7 +92,7 @@ const page = (props: Props)  => {
       />
 
     {
-      dateActive ?  <button onClick={(e)=>setDateActive((current)=>!current)}>Click to close Date</button> :  <button onClick={(e)=>setDateActive((current)=>!current)}>Click to update Date</button>
+      dateActive ?  <button onClick={(e)=>setDateActive((current)=>!current)}>Click to close Date </button> :  <button onClick={(e)=>setDateActive((current)=>!current)}>Click to update Date </button>
     }
       {/* <button onClick={(e)=>setDateActive((current)=>!current)}>Click to update Date</button> */}
       {

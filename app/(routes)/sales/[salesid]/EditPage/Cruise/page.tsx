@@ -1,7 +1,7 @@
 import React from 'react'
 import Cruise from '../../ViewPage/Cruise/page'
 import { IParams } from "../../page";
-import CruiseForm from '../../Components/Form4/CruiseForm';
+import CruiseForm from "../../Components/EditForm/Cruise";
 const page = ( { params }: { params: IParams }) => {
   return (
     <div>
