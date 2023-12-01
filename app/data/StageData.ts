@@ -7,6 +7,7 @@ export const data: StageFormProps[] = [
         status: true,
         Stages: "Guest info Form",
         href: `/sales/1/GuestInfo`,
+        hrefData:"/sales/1/GuestInfo"
     },
     {
         id: "m5gr84i9",
@@ -14,6 +15,7 @@ export const data: StageFormProps[] = [
         status: true,
         Stages: " Itinerary or Day Plans Form",
         href: "/sales/1/Itinerary ",
+        hrefData:"/sales/1/Itinerary"
     },
     {
         id: "m5gr84i9",
@@ -21,6 +23,7 @@ export const data: StageFormProps[] = [
         status: true,
         Stages: " Room Booking Form",
         href: "/sales/1/RoomBooking ",
+        hrefData:"/sales/1/RoomBooking"
     },
     {
         id: "m5gr84i9",
@@ -28,6 +31,7 @@ export const data: StageFormProps[] = [
         status: true,
         Stages: "Cruise Requisition Form",
         href: "/sales/1/Cruise ",
+        hrefData:"/sales/1/Cruise"
     },
     {
         id: "m5gr84i9",
@@ -35,6 +39,7 @@ export const data: StageFormProps[] = [
         status: false,
         Stages: "Vehicle Requisition Form",
         href: "/sales/1/Vehical ",
+        hrefData:"/sales/1/Vehical"
     },
     {
         id: "m5gr84i9",
@@ -42,6 +47,7 @@ export const data: StageFormProps[] = [
         status: false,
         Stages: "Complimentary / Discounted Activities Form",
         href: "/sales/1/DiscountedActivty ",
+        hrefData:"/sales/1/DiscountedActivty"
     },
     {
         id: "m5gr84i9",
@@ -49,6 +55,7 @@ export const data: StageFormProps[] = [
         status: false,
         Stages: "Flight Details Form",
         href: "/sales/1/FilghtDetails ",
+        hrefData:"/sales/1/FilghtDetails"
     },
     {
         id: "m5gr84i9",
@@ -56,6 +63,6 @@ export const data: StageFormProps[] = [
         status: false,
         Stages: "Fiber Boat Requisition Form",
         href: "/sales/1/FiberBoat ",
+        hrefData:"/sales/1/FiberBoat"
     }
-
 ]
