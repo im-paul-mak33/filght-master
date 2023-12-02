@@ -133,21 +133,27 @@ const FiberBoatForm:FC<ItenaryInputProps> = ({id}) => {
 
   
   return (
-    <div>
+    <div className='space-y-4'>
      {
       apiData?.map((el:any,i)=>(
         <>
-        <div>{el.date}</div>
-        <input type='text' value={el.time}  onChange={(event)=>handleInputTimeChange(el.id,event)}/>
-        <input type='text' value={el.arrival} onChange={(event)=>handleInputArrivalChange(el.id,event)} />
-        <input type='text' value={el.stay} onChange={(event)=>handleInputStayChange(el.id,event)}/>
-        <input type='text' value={el.service} onChange={(event)=>handleInputServiceChange(el.id,event)} />
-        <input type='text' value={el.boattype} onChange={(event)=>handleInputBoattypeChange(el.id,event)} />
+        <hr />
+        {/* <div>{el.date}</div> */}
+        <label>Enter time</label>
+        <input type='text' className='border border-black px-1 py-2 rounded-xl' value={el.time}  onChange={(event)=>handleInputTimeChange(el.id,event)}/>
+        <label>Enter arrival</label>
+        <input type='text' className='border border-black px-1 py-2 rounded-xl' value={el.arrival} onChange={(event)=>handleInputArrivalChange(el.id,event)} />
+        <label>Enter stay</label>
+        <input type='text'className='border border-black px-1 py-2 rounded-xl' value={el.stay} onChange={(event)=>handleInputStayChange(el.id,event)}/>
+        <label>Enter service</label>
+        <input type='text' className='border border-black px-1 py-2 rounded-xl' value={el.service} onChange={(event)=>handleInputServiceChange(el.id,event)} />
+        <label>Enter boattype</label>
+        <input type='text' className='border border-black px-1 py-2 rounded-xl' value={el.boattype} onChange={(event)=>handleInputBoattypeChange(el.id,event)} />
         {/* <input type='text' value={el.PNR}  onChange={(event)=>handleInputPNRChange(el.id,event)} /> */}
         </>
       ))
      }
-     <button onClick={updateData}>click To update</button>
+     <button  className='bg-blue-400 px-1 py-2 rounded-xl' onClick={updateData}>click To update</button>
     </div>
   )
 }

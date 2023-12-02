@@ -36,7 +36,7 @@ const DiscountedModal: FC<CruiseModalProps> = ({
 }) => {
   const initialSelectedValues = {
     Activies: null,
-    stay: null,
+    vehical_type: null,
     service: null,
     complimentary: null,
   };
@@ -94,7 +94,7 @@ const DiscountedModal: FC<CruiseModalProps> = ({
   const onSubmit: SubmitHandler<FieldValues> = async (values) => {
     const newValues = {
       ...values,
-      arrival: dateValue,
+      date: dateValue,
       time: timeValue,
       ...selectedValues,
       remark: remark,
@@ -148,7 +148,7 @@ const DiscountedModal: FC<CruiseModalProps> = ({
                 id="stay"
                 options={stayOptions}
                 onChange={(selectedValue) =>
-                  handleSelectChange(selectedValue, "stay")
+                  handleSelectChange(selectedValue, "vehical_type")
                 }
               />
             </div>

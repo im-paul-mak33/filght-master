@@ -479,18 +479,23 @@ const Itineray:FC<ItenaryInputProps> = ({paramsid}) => {
 
   
   return (
-    <div>
+    <div className='space-y-4'>
      {
       apiData?.map((el:any,i)=>(
         <>
+        <hr />
+        <label>Enter date</label>
         <div key={el.id}>{el.date}</div>
-        <input type='text' value={el.day}  onChange={(event)=>handleInputChange(el.id,event)} />
-        <input type='text' value={el.stay} onChange={(event)=>handleInputstayChange(el.id,event)}/>
-        <input type='text' value={el.activity}  onChange={(event)=>handleChange(el.id,event)}/>
+        <label>Enter delay</label>
+        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.day}  onChange={(event)=>handleInputChange(el.id,event)} />
+        <label>Enter Stay</label>
+        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.stay} onChange={(event)=>handleInputstayChange(el.id,event)}/>
+        <label>Enter activity</label>
+        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.activity}  onChange={(event)=>handleChange(el.id,event)}/>
         </>
       ))
      }
-     <button onClick={updateData}>click To update</button>
+     <button  className='bg-blue-400 px-1 py-2 rounded-xl' onClick={updateData}>click To update</button>
     </div>
   )
 }

@@ -60,7 +60,7 @@ const page = async ({ params }: { params: IParams }) => {
       status: guestUser && guestUser.discount.length <= 0 ? false : true,
       Stages: "Complimentary / Discounted Activities Form",
       href: `/sales/${params.salesid}/DiscountedActivty`,
-      hrefData:`/sales/${params.salesid}/EditPage/DiscountedActivty`
+      hrefData:`/sales/${params.salesid}/EditPage/DiscountedActivity`
     },
     {
       id: params.salesid,

@@ -113,19 +113,23 @@ const VehicalForm:FC<ItenaryInputProps> = ({id}) => {
 
   
   return (
-    <div>
+    <div className='space-y-4'>
      {
       apiData?.map((el:any,i)=>(
         <>
-        <div>{el.date}</div>
-        <input type='text' value={el.place} onChange={(event)=>handleInputPlaceChange(el.id,event)}/>
-        <input type='text' value={el.service} onChange={(event)=>handleInputServiceChange(el.id,event)} />
-        <input type='text' value={el.ac_nonac}  onChange={(event)=>handleInputAcNoACChange(el.id,event)}/>
-        <input type='text' value={el.vehical_type}  onChange={(event)=>handleInputVehicleTypeChange(el.id,event)} />
+        <hr />
+        <label>Enter place</label>
+        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.place} onChange={(event)=>handleInputPlaceChange(el.id,event)}/>
+        <label>Enter Service</label>
+        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.service} onChange={(event)=>handleInputServiceChange(el.id,event)} />
+        <label>Enter ac_nonac</label>
+        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.ac_nonac}  onChange={(event)=>handleInputAcNoACChange(el.id,event)}/>
+        <label>Enter vehical_type</label>
+        <input  className='border border-black px-1 py-2 rounded-xl' type='text' value={el.vehical_type}  onChange={(event)=>handleInputVehicleTypeChange(el.id,event)} />
         </>
       ))
      }
-     <button onClick={updateData}>click To update</button>
+     <button  className='bg-blue-400 px-1 py-2 rounded-xl' onClick={updateData}>click To update</button>
     </div>
   )
 }

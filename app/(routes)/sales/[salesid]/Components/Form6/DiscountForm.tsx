@@ -88,13 +88,13 @@ const DiscountedForm: React.FC<CruiseProps> = ({ id }) => {
     },
 
     {
-      accessorKey: "stay",
+      accessorKey: "vehical_type",
       header: () => <div className="text-left">Stay</div>,
       cell: ({ row }) => {
         return (
           <div className="flex items-center  gap-2">
             <div className="text-center font-medium">
-              {row.getValue("stay")}
+              {row.getValue("vehical_type")}
             </div>
           </div>
         );
@@ -102,13 +102,13 @@ const DiscountedForm: React.FC<CruiseProps> = ({ id }) => {
     },
 
     {
-      accessorKey: "arrival",
+      accessorKey: "date",
       header: () => <div className="text-left">Arrival date</div>,
       cell: ({ row }) => {
         return (
           <div className="flex items-center  gap-2">
             <div className="text-center font-medium">
-              {format(new Date(row.getValue("arrival")), "PP")}
+              {format(new Date(row.getValue("date")), "PP")}
             </div>
           </div>
         );

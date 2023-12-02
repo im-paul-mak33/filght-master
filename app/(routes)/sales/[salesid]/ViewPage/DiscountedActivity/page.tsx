@@ -21,10 +21,10 @@ type ItenaryInputProps = {
     Activies: string;
     time: string;
     date: string;
-    complimentary: string;
+    complimentary: boolean;
     remark: string;
     vehical_type: string;
-    service: string;
+    service: boolean;
     amount: string;
     pax: string;
     guestId: string;
@@ -32,7 +32,7 @@ type ItenaryInputProps = {
   }
   
 const Discount = ( { params }: { params: IParams })  => {
-    const [apiData, setApiData] = useState([]);
+    const [apiData, setApiData] = useState<ActivityBooking[]>([]);
 
     useEffect(() => {
       const fetchGuestInfo = async () => {
@@ -120,7 +120,7 @@ const Discount = ( { params }: { params: IParams })  => {
                 <TableCell>
                   {/* {apiData?.complimentary} */}
                   {apiData.map((el:any,i)=>(
-                <div>{el.complimentary}</div>
+                <div>{el.complimentary.toString()}</div>
               ))}
                 </TableCell>
                 <TableCell>
@@ -138,7 +138,7 @@ const Discount = ( { params }: { params: IParams })  => {
                 <TableCell>
                   {/* {apiData?.service} */}
                   {apiData.map((el:any,i)=>(
-                <div>{el.service}</div>
+                <div>{el.service.toString()}</div>
               ))}
                 </TableCell>
                 <TableCell>

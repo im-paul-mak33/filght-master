@@ -1,7 +1,7 @@
 import React from 'react'
 import { IParams } from "../../page";
 import Discount from '../../ViewPage/DiscountedActivity/page';
-import DiscountedForm from '../../Components/Form6/DiscountForm';
+import DiscountedForm from '../../Components/EditForm/DiscountedForm';
 const page = ( { params }: { params: IParams }) => {
   return (
     <div>

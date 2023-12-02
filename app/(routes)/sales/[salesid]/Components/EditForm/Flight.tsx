@@ -135,21 +135,28 @@ const FlightForm:FC<ItenaryInputProps> = ({id}) => {
 
   
   return (
-    <div>
+    <div className='space-y-4'>
      {
       apiData?.map((el:any,i)=>(
         <>
-        <div>{el.date}</div>
-        <input type='text' value={el.time} onChange={(event)=>handleInputVehicleTimeChange(el.id,event)}/>
-        <input type='text' value={el.arrival} onChange={(event)=>handleInputArrivalChange(el.id,event)} />
-        <input type='text' value={el.flightno}  onChange={(event)=>handleInputFlightnoChange(el.id,event)}/>
-        <input type='text' value={el.deptcity}  onChange={(event)=>handleInputdeptcityChange(el.id,event)} />
-        <input type='text' value={el.arrivalcity}  onChange={(event)=>handleInputarrivalcityChange(el.id,event)} />
-        <input type='text' value={el.PNR}  onChange={(event)=>handleInputPNRChange(el.id,event)} />
+        {/* <div>{el.date}</div> */}
+        <hr />
+        <label>Enter time</label>
+        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.time} onChange={(event)=>handleInputVehicleTimeChange(el.id,event)}/>
+        <label>Enter arrival</label>
+        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.arrival} onChange={(event)=>handleInputArrivalChange(el.id,event)} />
+        <label>Enter flightno</label>
+        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.flightno}  onChange={(event)=>handleInputFlightnoChange(el.id,event)}/>
+        <label>Enter deptcity</label>
+        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.deptcity}  onChange={(event)=>handleInputdeptcityChange(el.id,event)} />
+        <label>Enter arrivalcity</label>
+        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.arrivalcity}  onChange={(event)=>handleInputarrivalcityChange(el.id,event)} />
+        <label>Enter PNR</label>
+        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.PNR}  onChange={(event)=>handleInputPNRChange(el.id,event)} />
         </>
       ))
      }
-     <button onClick={updateData}>click To update</button>
+     <button  className='bg-blue-400 px-1 py-2 rounded-xl' onClick={updateData}>click To update</button>
     </div>
   )
 }

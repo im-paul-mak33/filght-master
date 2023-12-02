@@ -134,21 +134,27 @@ const CruiseForm:FC<ItenaryInputProps> = ({id}) => {
 
   
   return (
-    <div>
+    <div className='space-y-4'>
      {
       apiData?.map((el:any,i)=>(
         <>
-        <div>{el.date}</div>
-        <input type='text' value={el.time}  onChange={(event)=>handleInputTimeChange(el.id,event)}/>
-        <input type='text' value={el.route} onChange={(event)=>handleInputRouteChange(el.id,event)} />
-        <input type='text' value={el.cruise} onChange={(event)=>handleInputCruiseChange(el.id,event)}/>
-        <input type='text' value={el.journeyDate}  onChange={(event)=>handleInputJourneyDateChange(el.id,event)}/>
-        <input type='text' value={el.seat_class} onChange={(event)=>handleInputSeat_classChange(el.id,event)} />
-        <input type='text' value={el.PNR}  onChange={(event)=>handleInputPNRChange(el.id,event)} />
+        <hr />
+        <label>Enter time</label>
+        <input type='text' className='border border-black px-1 py-2 rounded-xl' value={el.time}  onChange={(event)=>handleInputTimeChange(el.id,event)}/>
+        <label>Enter route</label>
+        <input type='text' className='border border-black px-1 py-2 rounded-xl' value={el.route} onChange={(event)=>handleInputRouteChange(el.id,event)} />
+        <label>Enter Cruise</label>
+        <input type='text' className='border border-black px-1 py-2 rounded-xl' value={el.cruise} onChange={(event)=>handleInputCruiseChange(el.id,event)}/>
+        <label>Enter journeyDate</label>
+        <input type='text' className='border border-black px-1 py-2 rounded-xl' value={el.journeyDate}  onChange={(event)=>handleInputJourneyDateChange(el.id,event)}/>
+        <label>Enter seatClass</label>
+        <input type='text' className='border border-black px-1 py-2 rounded-xl' value={el.seat_class} onChange={(event)=>handleInputSeat_classChange(el.id,event)} />
+        <label>Enter PNR</label>
+        <input type='text'className='border border-black px-1 py-2 rounded-xl' value={el.PNR}  onChange={(event)=>handleInputPNRChange(el.id,event)} />
         </>
       ))
      }
-     <button onClick={updateData}>click To update</button>
+     <button onClick={updateData} className='bg-blue-400 px-1 py-2 rounded-xl'>click To update</button>
     </div>
   )
 }

@@ -194,27 +194,37 @@ const RoomBookingForm:FC<ItenaryInputProps> = ({id}) => {
 
   
   return (
-    <div>
+    <div className='space-y-4'>
      {
       apiData?.map((el:any,i)=>(
         <>
-        <div>{el.date}</div>
         <hr />
-        <input type='text' value={el.place}  onChange={(event)=>handleInputPlaceChange(el.id,event)}/>
-      <input type='text' value={el.hotel} onChange={(event)=>handleChange(el.id,event)}/>
-        <input type='text' value={el.choosedhotel} onChange={(event)=>handleInputChoosedhotelChange(el.id,event)}/>
-        <input type='text' value={el.roomType}  onChange={(event)=>handleInputRoomTypeChange(el.id,event)}/>
-        <input type='text' value={el.plan} onChange={(event)=>handleInputPlanChange(el.id,event)} />
-        <input type='text' value={el.rooms}  onChange={(event)=>handleInputRoomsChange(el.id,event)} />
-        <input type='text' value={el.Ex_ADL}  onChange={(event)=>handleInputExADLChange(el.id,event)} />
-        <input type='text' value={el.CWB}  onChange={(event)=>handleInputCWBChange(el.id,event)} />
-        <input type='text' value={el.CWOB}  onChange={(event)=>handleInputCWOBChange(el.id,event)} />
-        <input type='text' value={el.comp_Child}  onChange={(event)=>handleInputCompChildChange(el.id,event)} />
-        <input type='text' value={el.checkIn}  onChange={(event)=>handleInputCheckInChange(el.id,event)} />
+        <label>Enter place</label>
+        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.place}  onChange={(event)=>handleInputPlaceChange(el.id,event)}/>
+        <label>Enter hotel</label>
+      <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.hotel} onChange={(event)=>handleChange(el.id,event)}/>
+      <label>Enter choosedhotel</label>
+        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.choosedhotel} onChange={(event)=>handleInputChoosedhotelChange(el.id,event)}/>
+        <label>Enter roomType</label>
+        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.roomType}  onChange={(event)=>handleInputRoomTypeChange(el.id,event)}/>
+        <label>Enter plan</label>
+        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.plan} onChange={(event)=>handleInputPlanChange(el.id,event)} />
+        <label>Enter rooms</label>
+        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.rooms}  onChange={(event)=>handleInputRoomsChange(el.id,event)} />
+        <label>Enter Ex_ADL</label>
+        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.Ex_ADL}  onChange={(event)=>handleInputExADLChange(el.id,event)} />
+        <label>Enter CWB</label>
+        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.CWB}  onChange={(event)=>handleInputCWBChange(el.id,event)} />
+        <label>Enter CWOB</label>
+        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.CWOB}  onChange={(event)=>handleInputCWOBChange(el.id,event)} />
+        <label>Enter compChild</label>
+        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.comp_Child}  onChange={(event)=>handleInputCompChildChange(el.id,event)} />
+        <label>Enter CheckIn</label>
+        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.checkIn}  onChange={(event)=>handleInputCheckInChange(el.id,event)} />
         </>
       ))
      }
-     <button onClick={updateData}>click To update</button>
+     <button  className='bg-blue-400 px-1 py-2 rounded-xl' onClick={updateData}>click To update</button>
     </div>
   )
 }
