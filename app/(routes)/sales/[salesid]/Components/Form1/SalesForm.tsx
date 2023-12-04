@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import * as z from "zod";
 import DateSelect from "@/components/Custom/Input/DateSelect";
 import PhoneNumberInput from "@/components/Custom/Input/PhoneNumberInput";
@@ -17,10 +17,18 @@ import Form1SideDiv from "./Form1SideDiv";
 import { toast } from "@/components/ui/use-toast";
 import { useRouter } from "next/navigation";
 import { IParams } from "../../page";
+
+interface UserData {
+  id: string;
+  role: string;
+  name: string;
+  // Add other properties if present in your actual data
+}
+
 const formSchema = z.object({
-  assignedTo: z.string().min(1, {
-    message: "Assigned to field must not be empty",
-  }),
+  // assignedTo: z.string().min(1, {
+  //   message: "Assigned to field must not be empty",
+  // }),
 
   service: z.string().min(1, {
     message: "Service field is mandatory.",
@@ -52,7 +60,6 @@ const formSchema = z.object({
 });
 
 export type StateInputProps = {
-  assignedTo: string;
   service: string;
   email: string;
   adult: number | null;
@@ -84,12 +91,14 @@ const SalesForm: FC<IdProps> = ({ id }) => {
   const [vipValue, setVipValue] = useState("");
   const [arrivalValue, setArrivalValue] = useState("");
   const [value, setValue] = useState("");
+  const [assignedValue, setAssignedValue] = useState("");
   const [category, setCategory] = useState("");
 
   const [guestType, setGuestType] = useState("");
   const [openDepartureTime, setOpenDepartureTime] = useState(false);
   const [openArrivalTime, setOpenArrivalTime] = useState(false);
   const [open, setOpen] = useState(false);
+  const [assignedOpen, setAssignedOpen] = useState(false);
   const [categoryOpen, setCateOpengory] = useState(false);
   const [openVip, setOpenVip] = useState(false);
   const [guestTypeOpen, setguestTypeOpen] = useState(false);
@@ -99,7 +108,6 @@ const SalesForm: FC<IdProps> = ({ id }) => {
   const [formFilledDate, setformFilledDate] = useState();
 
   const [inputValues, setInputValues] = useState<StateInputProps>({
-    assignedTo: "",
     service: "",
     email: "",
     adult: null,
@@ -128,7 +136,6 @@ const SalesForm: FC<IdProps> = ({ id }) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      assignedTo: "",
       service: "",
       email: "",
       adult: 0,
@@ -147,6 +154,7 @@ const SalesForm: FC<IdProps> = ({ id }) => {
         method: "POST",
         body: JSON.stringify({
           ...values,
+          assignedTo:assignedValue,
           dateOfDeparture: departTureDate,
           dateOfArrival: arrivedDate,
           timeOfArrival: arrivalValue,
@@ -201,6 +209,43 @@ const SalesForm: FC<IdProps> = ({ id }) => {
     )}`;
   });
 
+
+
+  const [apiData, setApiData] = useState<UserData[]>([]);
+  // console.log(apiData);
+  
+
+  useEffect(() => {
+    const fetchGuestInfo = async () => {
+      try {
+        // Fetch data from your Next.js API endpoint based on the provided reservationid
+        const response = await fetch(`/api/guest`);
+        if (response.ok) {
+          const data = await response.json();
+          // Set the fetched data to the state
+          const modifiedData: UserData[] = data.users.map(({ id, role ,name}: { id: string; role: string ; name:string }) => ({ id, role  ,name}));
+            setApiData(modifiedData);
+        
+        } else {
+          throw new Error('Failed to fetch data');
+        } 
+      } catch (error) {
+        // Handle errors if any
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchGuestInfo();
+  }, []); // Re-run effect when reservationid changes
+
+  const Userdata= apiData.map((el:any,i)=>{
+    return el.name;
+  })
+
+  console.log(Userdata);
+  
+  
+
   return (
     <>
       <section className="flex mt-8  gap-4 h-max">
@@ -221,7 +266,7 @@ const SalesForm: FC<IdProps> = ({ id }) => {
                   />
                 </div> */}
                 <div className="w-[50%]">
-                  <InputField
+                  {/* <InputField
                     form={form}
                     name="assignedTo"
                     label="Assigned To :"
@@ -229,7 +274,18 @@ const SalesForm: FC<IdProps> = ({ id }) => {
                     onChange={handleInputChange}
                     placeholder="xyz"
                     desc=" This is your public display assignedTo."
-                  />
+                  /> */}
+
+                <SearchSelect
+                  label={"Assigned To"}
+                  placeholder={"xyz"}
+                  data={Userdata}
+                  value={assignedValue}
+                  icon={Antenna}
+                  setValue={setAssignedValue}
+                  open={assignedOpen}
+                  setOpen={setAssignedOpen}
+                />
                 </div>
               </div>
 
@@ -462,6 +518,7 @@ const SalesForm: FC<IdProps> = ({ id }) => {
           </Form>
         </div>
         <Form1SideDiv
+         assignedTo={assignedValue}
           filledData={formFilledDate}
           arrivedDate={arrivedDate}
           arrivalValue={arrivalValue}

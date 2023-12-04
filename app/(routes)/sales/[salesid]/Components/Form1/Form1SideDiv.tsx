@@ -12,6 +12,7 @@ import {
 
 type SideProps = {
   state: StateInputProps;
+  assignedTo?: string ;
   filledData?: string;
   arrivedDate?: string;
   departTureDate?: string;
@@ -23,6 +24,7 @@ type SideProps = {
 };
 
 const Form1SideDiv: FC<SideProps> = ({
+  assignedTo,
   state,
   filledData,
   arrivedDate,
@@ -36,7 +38,7 @@ const Form1SideDiv: FC<SideProps> = ({
   return (
     <section className="flex flex-col  w-[50%]  py-5">
       {!filledData &&
-      !state.assignedTo &&
+      !assignedTo &&
       !state.contact &&
       !state.email &&
       !state.service &&
@@ -61,7 +63,7 @@ const Form1SideDiv: FC<SideProps> = ({
         </article>
       ) : (
         <aside className="flex flex-col gap-4">
-          {state.assignedTo || filledData ? (
+          {assignedTo || filledData ? (
             <article className="bg-white space-y-4 p-4 shadow-md">
               <div className="font-semibold items-center flex gap-4 text-xl text-primary">
                 <div className=" shadow-xl p-2 bg-primary rounded-full">
@@ -70,10 +72,10 @@ const Form1SideDiv: FC<SideProps> = ({
                 Basic Form data{" "}
               </div>
               <div className="flex gap-10 ">
-                {state.assignedTo && (
+                {assignedTo && (
                   <div className="flex gap-2">
                     <p className="font-semibold">Assigned To : -</p>
-                    <p>{state.assignedTo}</p>
+                    <p>{assignedTo}</p>
                   </div>
                 )}
                 {filledData && (
