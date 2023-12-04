@@ -4,6 +4,7 @@ export default withAuth({
     pages: {
         signIn: "http://localhost:3000",
         // signIn: "https://filght.vercel.app/",
+        // signIn: "https://bados.vercel.app/",
     },
 
 });
