@@ -118,105 +118,162 @@ type ItenaryInputProps = {
           <TableRow>
             <TableCell>
             {apiData.map((el:any,i)=>(
-                    <div>{
-                      el.guestId===params.salesid && <div>{el.place}</div>
-                      }</div>
+                    <div>
+                      <TableCell>
+                      {
+                        el.guestId===params.salesid && <div>{el.place}</div>
+                      }
+                      </TableCell>
+                      </div>
                   ))}
             </TableCell>
             <TableCell>
               {/* {apiData?.hotel} */}
               {apiData.map((el:any,i)=>(
-                    <div>{
-                      el.guestId===params.salesid && <div>{el.hotel}</div>
-                      }</div>
+                    <div>
+                      <TableCell>
+
+                      {
+                        el.guestId===params.salesid && <div>{el.hotel}</div>
+                      }
+                      </TableCell>
+                      </div>
                   ))}
             </TableCell>
             <TableCell>
               {/* {apiData?.choosedhotel} */}
               {apiData.map((el:any,i)=>(
-                    <div>{
-                      el.guestId===params.salesid && <div>{el.choosedhotel}</div>
-                      }</div>
+                    <div>
+                      <TableCell>
+                      {
+                        el.guestId===params.salesid && <div>{el.choosedhotel}</div>
+                      }
+                      </TableCell>
+                      </div>
                   ))}
             </TableCell>
             <TableCell>
               {/* {apiData?.roomType} */}
               {apiData.map((el:any,i)=>(
-                    <div>{
-                      el.guestId===params.salesid && <div>{el.roomType}</div>
-                      }</div>
+                    <div>
+                      <TableCell>
+                      {
+                        el.guestId===params.salesid && <div>{el.roomType}</div>
+                      }
+                      </TableCell>
+                      </div>
                   ))}
             </TableCell>
             <TableCell>
               {/* {apiData?.plan} */}
               {apiData.map((el:any,i)=>(
-                    <div>{
-                      el.guestId===params.salesid && <div>{el.plan}</div>
-                      }</div>
+                    <div>
+                      <TableCell>
+                      {
+                        el.guestId===params.salesid && <div>{el.plan}</div>
+                      }
+                      </TableCell>
+                      </div>
                   ))}
             </TableCell>
             <TableCell>
               {/* {apiData?.rooms} */}
               {apiData.map((el:any,i)=>(
-                    <div>{
-                      el.guestId===params.salesid && <div>{el.rooms}</div>
-                      }</div>
+                    <div>
+                      <TableCell>
+                      {
+                        el.guestId===params.salesid && <div>{el.rooms}</div>
+                      }
+                      </TableCell>
+                      </div>
                   ))}
             </TableCell>
             <TableCell>
               {/* {apiData?.Ex_ADL} */}
               {apiData.map((el:any,i)=>(
-                    <div>{
-                      el.guestId===params.salesid && <div>{el.Ex_ADL}</div>
-                      }</div>
+                    <div>
+                      <TableCell>
+
+                      {
+                        el.guestId===params.salesid && <div>{el.Ex_ADL}</div>
+                      }
+                      </TableCell>
+                      </div>
                   ))}
             </TableCell>
             <TableCell>
               {/* {apiData?.CWB} */}
               {apiData.map((el:any,i)=>(
-                    <div>{
-                      el.guestId===params.salesid && <div>{el.CWB}</div>
-                      }</div>
+                    <div>
+                      <TableCell>
+
+                      {
+                        el.guestId===params.salesid && <div>{el.CWB}</div>
+                      }
+                      </TableCell>
+                      </div>
                   ))}
             </TableCell>
             <TableCell>
               {/* {apiData?.CWOB} */}
               {apiData.map((el:any,i)=>(
-                    <div>{
-                      el.guestId===params.salesid && <div>{el.CWOB}</div>
-                      }</div>
+                    <div>
+                      <TableCell>
+                      {
+                        el.guestId===params.salesid && <div>{el.CWOB}</div>
+                      }
+                      </TableCell>
+                      </div>
                   ))}
             </TableCell>
             <TableCell>
               {/* {apiData?.comp_Child} */}
               {apiData.map((el:any,i)=>(
-                    <div>{
-                      el.guestId===params.salesid && <div>{el.comp_Child}</div>
-                      }</div>
+                    <div>
+                      <TableCell>
+                      {
+                        el.guestId===params.salesid && <div>{el.comp_Child}</div>
+                      }
+                      </TableCell>
+                      </div>
                   ))}
             </TableCell>
             <TableCell>
               {/* {apiData?.checkIn} */}
               {apiData.map((el:any,i)=>(
-                    <div>{
-                      el.guestId===params.salesid && <div>{el.checkIn}</div>
-                      }</div>
+                    <div>
+                      <TableCell>
+                      {
+                        el.guestId===params.salesid && <div>{el.checkIn}</div>
+                      }
+                      </TableCell>
+                      </div>
                   ))}
             </TableCell>
             <TableCell>
               {/* {apiData?.checkOut} */}
               {apiData.map((el:any,i)=>(
-                    <div>{
-                      el.guestId===params.salesid && <div>{el.checkOut}</div>
-                      }</div>
+                    <div>
+                      <TableCell>
+
+                      {
+                        el.guestId===params.salesid && <div>{el.checkOut}</div>
+                      }
+                      </TableCell>
+                      </div>
                   ))}
             </TableCell>
             <TableCell>
               {/* {apiData?.guestChoice} */}
               {apiData.map((el:any,i)=>(
-                    <div>{
-                      el.guestId===params.salesid && <div>{el.guestChoice}</div>
-                      }</div>
+                    <div>
+                      <TableCell>
+
+                      {
+                        el.guestId===params.salesid && <div>{el.guestChoice}</div>
+                      }
+                      </TableCell>
+                      </div>
                   ))}
             </TableCell>
           </TableRow>

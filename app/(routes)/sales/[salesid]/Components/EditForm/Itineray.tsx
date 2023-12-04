@@ -479,20 +479,21 @@ const Itineray:FC<ItenaryInputProps> = ({paramsid}) => {
 
   
   return (
-    <div className='space-y-4'>
+    <div className='space-y-4 p-3'>
+      <div className='flex items-center justify-center'>Edit the Itinerary Data</div>
      {
       apiData?.map((el:any,i)=>(
-        <>
+        <div className='flex flex-wrap space-x-6 space-y-2 border border-black p-4 rounded-xl'>
         <hr />
-        <label>Enter date</label>
-        <div key={el.id}>{el.date}</div>
-        <label>Enter delay</label>
-        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.day}  onChange={(event)=>handleInputChange(el.id,event)} />
-        <label>Enter Stay</label>
-        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.stay} onChange={(event)=>handleInputstayChange(el.id,event)}/>
-        <label>Enter activity</label>
-        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.activity}  onChange={(event)=>handleChange(el.id,event)}/>
-        </>
+        <label className='w-48'>Enter date</label> <br />
+        <div key={el.id} className='w-48'>{el.date}</div>
+        <label className='w-48'>Enter delay</label> <br />
+        <input className='border w-48 border-black px-1 py-2 rounded-xl' type='text' value={el.day}  onChange={(event)=>handleInputChange(el.id,event)} />
+        <label className='w-48'>Enter Stay</label> <br />
+        <input className='border w-48 border-black px-1 py-2 rounded-xl' type='text' value={el.stay} onChange={(event)=>handleInputstayChange(el.id,event)}/>
+        <label className='w-48'>Enter activity</label> <br />
+        <input className='border w-48 border-black px-1 py-2 rounded-xl' type='text' value={el.activity}  onChange={(event)=>handleChange(el.id,event)}/>
+        </div>
       ))
      }
      <button  className='bg-blue-400 px-1 py-2 rounded-xl' onClick={updateData}>click To update</button>

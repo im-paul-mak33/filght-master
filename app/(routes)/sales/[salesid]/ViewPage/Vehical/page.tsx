@@ -82,25 +82,43 @@ const Vehicle= ( { params }: { params: IParams }) => {
             <TableCell>
               {/* {apiData?.place} */}
               {apiData.map((el:any,i)=>(
-                <div>{el.place}</div>
+                <div>
+                  <TableCell>
+                  {el.place}
+                  </TableCell>
+                  </div>
               ))}
             </TableCell>
             <TableCell>
               {/* {apiData?.service} */}
               {apiData.map((el:any,i)=>(
-                <div>{el.service}</div>
+                <div>
+                  <TableCell>
+                  {el.service}
+                  </TableCell>
+                  </div>
               ))}
             </TableCell>
             <TableCell>
               {/* {apiData?.ac_nonac} */}
               {apiData.map((el:any,i)=>(
-                <div>{el.ac_nonac}</div>
+                <div>
+                  <TableCell>
+
+                  {el.ac_nonac}
+                  </TableCell>
+                  </div>
               ))}
             </TableCell>
             <TableCell>
               {/* {apiData?.vehical_type} */}
               {apiData.map((el:any,i)=>(
-                <div>{el.vehical_type}</div>
+                <div>
+                  <TableCell>
+
+                  {el.vehical_type}
+                  </TableCell>
+                  </div>
               ))}
             </TableCell>
           </TableRow>

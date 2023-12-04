@@ -54,7 +54,7 @@ type ItenaryInputProps = {
     }, [params.salesid]); // Re-run effect when reservationid changes
     console.log(apiData);
   return (
-    <div className='mb-6'>
+    <div className='mb-6 '>
       <DeskNav/>
         <div className='flex items-center justify-center mt-8 mb-2'>
           Reviewed You'r Itinerary Data
@@ -78,38 +78,56 @@ type ItenaryInputProps = {
             </TableRow>
         </TableHeader>
 
-            <TableBody>
-              <TableRow>
-                <TableCell>
-
+            <TableBody >
+              
+              <TableRow >
+                <TableCell >
                   {apiData.map((el:any,i)=>(
-                    <div>{
-                      el.guestId===params.salesid && <div>{el.date}</div>
-                      }</div>
+                    <div>
+                      <TableCell >
+                      {
+                        el.guestId===params.salesid && <div>{el.date}</div>
+                      }
+                      </TableCell>
+                      </div>
                   ))}
                 </TableCell>
                 <TableCell>
                   {/* {apiData?.day} */}
                   {apiData.map((el:any,i)=>(
-                    <div>{
-                      el.guestId===params.salesid && <div>{el.day}</div>
-                      }</div>
+                    <div>
+                      <TableCell >
+
+                      {
+                        el.guestId===params.salesid && <div>{el.day}</div>
+                      }
+                      </TableCell>
+                      </div>
                   ))}
                 </TableCell>
                 <TableCell>
                   {/* {apiData?.stay} */}
                   {apiData.map((el:any,i)=>(
-                    <div>{
-                      el.guestId===params.salesid && <div>{el.stay}</div>
-                      }</div>
+                    <div>
+                      <TableCell >
+                      {
+                        el.guestId===params.salesid && <div>{el.stay}</div>
+                      }
+                      </TableCell>
+                      
+                      </div>
                   ))}
                 </TableCell>
                 <TableCell>
                   {/* {apiData?.activity} */}
                   {apiData.map((el:any,i)=>(
-                    <div>{
-                      el.guestId===params.salesid && <div>{el.activity}</div>
-                      }</div>
+                    <div>
+                      <TableCell >
+                      {
+                        el.guestId===params.salesid && <div>{el.activity}</div>
+                      }
+                      </TableCell>
+                      </div>
                   ))}
                 </TableCell>
               </TableRow>

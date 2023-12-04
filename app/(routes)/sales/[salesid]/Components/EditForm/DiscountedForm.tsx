@@ -171,41 +171,42 @@ const DiscountedForm:FC<ItenaryInputProps> = ({id}) => {
 
   
   return (
-    <div className='space-y-4'>
+    <div className='space-y-4 p-3'>
+         <div className='flex items-center justify-center'>Edit the DiscountedForm Data</div>
      {
       apiData?.map((el:any,i)=>(
-        <>
+        <div className='flex flex-wrap space-x-8 space-y-2 border border-black p-4 rounded-xl'>
         <hr />
-        <label>Enter date</label>
-        <div>{el.date}</div>
-        <label>Enter Activity</label>
-        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.Activies}  onChange={(event)=>handleInputActivitiesChange(el.id,event)}/>
-        <label>Enter time</label>
-        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.time} onChange={(event)=>handleInputTimeChange(el.id,event)} />
-        <label>Enter date</label>
-        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.date} onChange={(event)=>handleInputDateChange(el.id,event)}/>
+        <label className='w-48'> Date</label> <br />
+        <div className='w-48'>{el.date}</div>
+        <label className='w-48'>Enter Activity</label> <br />
+        <input className='border w-48 border-black px-1 py-2 rounded-xl' type='text' value={el.Activies}  onChange={(event)=>handleInputActivitiesChange(el.id,event)}/>
+        <label className='w-48'>Enter time</label> <br />
+        <input className='border w-48 border-black px-1 py-2 rounded-xl' type='text' value={el.time} onChange={(event)=>handleInputTimeChange(el.id,event)} />
+        <label className='w-48'>Enter date</label> <br />
+        <input className='border w-48 border-black px-1 py-2 rounded-xl' type='text' value={el.date} onChange={(event)=>handleInputDateChange(el.id,event)}/>
    
         {/* <input type='text' value={el.complimentary} onChange={(event)=>handleInputComplimentaryChange(el.id,event)} /> */}
-        <label>Enter Complimentary</label>
-        <select  className='border border-black px-1 py-2 rounded-xl' value={el.complimentary.toString()} onChange={(event)=>handleInputComplimentaryChange(el.id,event)} >
+        <label className='w-48'>Enter Complimentary</label> <br />
+        <select  className='border w-48 border-black px-1 py-2 rounded-xl' value={el.complimentary.toString()} onChange={(event)=>handleInputComplimentaryChange(el.id,event)} >
         <option value="true">True</option>
               <option value="false">False</option>
         </select>
-        <label>Enter remark</label>
-        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.remark} onChange={(event)=>handleInputRemarkChange(el.id,event)} />
-        <label>Enter Vehical Type</label>
-        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.vehical_type} onChange={(event)=>handleInputVehicleTypeChange(el.id,event)} />
-        <label>Enter Service</label>
-        <select className='border border-black px-1 py-2 rounded-xl'  value={el.service.toString()} onChange={(event)=>handleInputServiceChange(el.id,event)} >
+        <label className='w-48'>Enter remark</label> <br />
+        <input className='border w-48 border-black px-1 py-2 rounded-xl' type='text' value={el.remark} onChange={(event)=>handleInputRemarkChange(el.id,event)} />
+        <label className='w-48'>Enter Vehical Type</label> <br />
+        <input className='border w-48 border-black px-1 py-2 rounded-xl' type='text' value={el.vehical_type} onChange={(event)=>handleInputVehicleTypeChange(el.id,event)} />
+        <label className='w-48'>Enter Service</label> <br />
+        <select className='border w-48 border-black px-1 py-2 rounded-xl'  value={el.service.toString()} onChange={(event)=>handleInputServiceChange(el.id,event)} >
         <option value="true">True</option>
               <option value="false">False</option>
         </select>
-        <label>Enter amount</label>
-        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.amount} onChange={(event)=>handleInputAmountChange(el.id,event)} />
-        <label>Enter Pax</label>
-        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.pax} onChange={(event)=>handleInputPaxChange(el.id,event)} />
+        <label className='w-48'>Enter amount</label> <br />
+        <input className='border w-48 border-black px-1 py-2 rounded-xl' type='text' value={el.amount} onChange={(event)=>handleInputAmountChange(el.id,event)} />
+        <label className='w-48'>Enter Pax</label> <br />
+        <input className='border w-48 border-black px-1 py-2 rounded-xl' type='text' value={el.pax} onChange={(event)=>handleInputPaxChange(el.id,event)} />
         {/* <input type='text' value={el.PNR}  onChange={(event)=>handleInputPNRChange(el.id,event)} /> */}
-        </>
+        </div>
       ))
      }
      <button  className='bg-blue-400 px-1 py-2 rounded-xl' onClick={updateData}>click To update</button>

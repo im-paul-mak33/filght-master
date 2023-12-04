@@ -90,37 +90,65 @@ const Cruise  = ( { params }: { params: IParams }) => {
           <TableRow>
             <TableCell>
               {apiData.map((el:any,i)=>(
-                <div>{el.time}</div>
+                <div>
+                 <TableCell>
+                  {el.time}
+                 </TableCell>
+                  </div>
               ))}
             </TableCell>
             <TableCell>
               {/* {apiData?.route} */}
               {apiData.map((el:any,i)=>(
-                <div>{el.route}</div>
+                <div>
+                  <TableCell>
+
+                  {el.route}
+                  </TableCell>
+                  </div>
               ))}
             </TableCell>
             <TableCell>
               {/* {apiData?.cruise} */}
               {apiData.map((el:any,i)=>(
-                <div>{el.cruise}</div>
+                <div>
+                  <TableCell>
+
+                  {el.cruise}
+                  </TableCell>
+                  </div>
               ))}
             </TableCell>
             <TableCell>
               {/* {apiData?.journeyDate} */}
               {apiData.map((el:any,i)=>(
-                <div>{el.journeyDate}</div>
+                <div>
+                  <TableCell>
+
+                  {el.journeyDate}
+                  </TableCell>
+                  </div>
               ))}
             </TableCell>
             <TableCell>
               {/* {apiData?.seat_class} */}
               {apiData.map((el:any,i)=>(
-                <div>{el.seat_class}</div>
+                <div>
+                  <TableCell>
+                  {el.seat_class}
+                  </TableCell>
+                  </div>
               ))}
             </TableCell>
             <TableCell>
               {/* {apiData?.PNR} */}
               {apiData.map((el:any,i)=>(
-                <div>{el.PNR}</div>
+                <div>
+                  <TableCell>
+
+                  {el.PNR}
+                  </TableCell>
+                  </div>
               ))}
             </TableCell>
           </TableRow>

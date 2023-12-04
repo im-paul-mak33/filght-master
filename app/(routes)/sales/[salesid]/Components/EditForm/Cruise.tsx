@@ -134,24 +134,25 @@ const CruiseForm:FC<ItenaryInputProps> = ({id}) => {
 
   
   return (
-    <div className='space-y-4'>
+    <div className='space-y-4 p-3'>
+         <div className='flex items-center justify-center'>Edit the Cruise Data</div>
      {
       apiData?.map((el:any,i)=>(
-        <>
+        <div className='flex flex-wrap space-x-8 space-y-2 border border-black p-4 rounded-xl'>
         <hr />
-        <label>Enter time</label>
-        <input type='text' className='border border-black px-1 py-2 rounded-xl' value={el.time}  onChange={(event)=>handleInputTimeChange(el.id,event)}/>
-        <label>Enter route</label>
-        <input type='text' className='border border-black px-1 py-2 rounded-xl' value={el.route} onChange={(event)=>handleInputRouteChange(el.id,event)} />
-        <label>Enter Cruise</label>
-        <input type='text' className='border border-black px-1 py-2 rounded-xl' value={el.cruise} onChange={(event)=>handleInputCruiseChange(el.id,event)}/>
-        <label>Enter journeyDate</label>
-        <input type='text' className='border border-black px-1 py-2 rounded-xl' value={el.journeyDate}  onChange={(event)=>handleInputJourneyDateChange(el.id,event)}/>
-        <label>Enter seatClass</label>
-        <input type='text' className='border border-black px-1 py-2 rounded-xl' value={el.seat_class} onChange={(event)=>handleInputSeat_classChange(el.id,event)} />
-        <label>Enter PNR</label>
-        <input type='text'className='border border-black px-1 py-2 rounded-xl' value={el.PNR}  onChange={(event)=>handleInputPNRChange(el.id,event)} />
-        </>
+        <label className='w-48'>Enter time</label> <br />
+        <input type='text' className='border 48 border-black px-1 py-2 rounded-xl' value={el.time}  onChange={(event)=>handleInputTimeChange(el.id,event)}/>
+        <label className='w-48'>Enter route</label> <br />
+        <input type='text' className='border 48 border-black px-1 py-2 rounded-xl' value={el.route} onChange={(event)=>handleInputRouteChange(el.id,event)} />
+        <label className='w-48'>Enter Cruise</label> <br />
+        <input type='text' className='border 48 border-black px-1 py-2 rounded-xl' value={el.cruise} onChange={(event)=>handleInputCruiseChange(el.id,event)}/>
+        <label className='w-48'>Enter journeyDate</label> <br />
+        <input type='text' className='border 48 border-black px-1 py-2 rounded-xl' value={el.journeyDate}  onChange={(event)=>handleInputJourneyDateChange(el.id,event)}/>
+        <label className='w-48'>Enter seatClass</label> <br />
+        <input type='text' className='border 48 border-black px-1 py-2 rounded-xl' value={el.seat_class} onChange={(event)=>handleInputSeat_classChange(el.id,event)} />
+        <label className='w-48'>Enter PNR</label> <br />
+        <input type='text'className='border 48 border-black px-1 py-2 rounded-xl' value={el.PNR}  onChange={(event)=>handleInputPNRChange(el.id,event)} />
+        </div>
       ))
      }
      <button onClick={updateData} className='bg-blue-400 px-1 py-2 rounded-xl'>click To update</button>

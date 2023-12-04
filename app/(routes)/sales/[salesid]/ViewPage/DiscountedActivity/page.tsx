@@ -102,55 +102,91 @@ const Discount = ( { params }: { params: IParams })  => {
                 <TableCell>
                   {/* {apiData?.Activies} */}
                   {apiData.map((el:any,i)=>(
-                <div>{el.Activies}</div>
+                <div>
+                  <TableCell>
+                  {el.Activies}
+                  </TableCell>
+                  </div>
               ))}
                 </TableCell>
                 <TableCell>
                   {/* {apiData?.time} */}
                   {apiData.map((el:any,i)=>(
-                <div>{el.time}</div>
+                <div>
+                  <TableCell>
+                  {el.time}
+                  </TableCell>
+                  </div>
               ))}
                 </TableCell>
                 <TableCell>
                   {/* {apiData?.date} */}
                   {apiData.map((el:any,i)=>(
-                <div>{el.date}</div>
+                <div>
+                  <TableCell>
+                  {el.date}
+                  </TableCell>
+                  </div>
               ))}
                 </TableCell>
                 <TableCell>
                   {/* {apiData?.complimentary} */}
                   {apiData.map((el:any,i)=>(
-                <div>{el.complimentary.toString()}</div>
+                <div>
+                  <TableCell>
+                  {el.complimentary.toString()}
+                  </TableCell>
+                  </div>
               ))}
                 </TableCell>
                 <TableCell>
                   {/* {apiData?.remark} */}
                   {apiData.map((el:any,i)=>(
-                <div>{el.remark}</div>
+                <div>
+                  <TableCell>
+                  {el.remark}
+                  </TableCell>
+                  </div>
               ))}
                 </TableCell>
                 <TableCell>
                   {/* {apiData?.vehical_type} */}
                   {apiData.map((el:any,i)=>(
-                <div>{el.vehical_type}</div>
+                <div>
+                  <TableCell>
+                  {el.vehical_type}
+                  </TableCell>
+                  </div>
               ))}
                 </TableCell>
                 <TableCell>
                   {/* {apiData?.service} */}
                   {apiData.map((el:any,i)=>(
-                <div>{el.service.toString()}</div>
+                <div>
+                  <TableCell>
+                  {el.service.toString()}
+                  </TableCell>
+                  </div>
               ))}
                 </TableCell>
                 <TableCell>
                   {/* {apiData?.amount} */}
                   {apiData.map((el:any,i)=>(
-                <div>{el.amount}</div>
+                <div>
+                  <TableCell>
+                  {el.amount}
+                  </TableCell>
+                  </div>
               ))}
                 </TableCell>
                 <TableCell>
                   {/* {apiData?.pax} */}
                   {apiData.map((el:any,i)=>(
-                <div>{el.pax}</div>
+                <div>
+                  <TableCell>
+                  {el.pax}
+                  </TableCell>
+                  </div>
               ))}
                 </TableCell>
               </TableRow>

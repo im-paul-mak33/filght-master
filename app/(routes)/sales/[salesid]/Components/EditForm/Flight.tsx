@@ -135,25 +135,26 @@ const FlightForm:FC<ItenaryInputProps> = ({id}) => {
 
   
   return (
-    <div className='space-y-4'>
+    <div className='space-y-4 p-3'>
+        <div className='flex items-center justify-center'>Edit the Flight Data</div>
      {
       apiData?.map((el:any,i)=>(
-        <>
+        <div className='flex flex-wrap space-x-6 space-y-2 border border-black p-4 rounded-xl'>
         {/* <div>{el.date}</div> */}
         <hr />
-        <label>Enter time</label>
-        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.time} onChange={(event)=>handleInputVehicleTimeChange(el.id,event)}/>
-        <label>Enter arrival</label>
-        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.arrival} onChange={(event)=>handleInputArrivalChange(el.id,event)} />
-        <label>Enter flightno</label>
-        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.flightno}  onChange={(event)=>handleInputFlightnoChange(el.id,event)}/>
-        <label>Enter deptcity</label>
-        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.deptcity}  onChange={(event)=>handleInputdeptcityChange(el.id,event)} />
-        <label>Enter arrivalcity</label>
-        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.arrivalcity}  onChange={(event)=>handleInputarrivalcityChange(el.id,event)} />
-        <label>Enter PNR</label>
-        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.PNR}  onChange={(event)=>handleInputPNRChange(el.id,event)} />
-        </>
+        <label className='w-48'>Enter time</label> <br />
+        <input className='border w-48 border-black px-1 py-2 rounded-xl' type='text' value={el.time} onChange={(event)=>handleInputVehicleTimeChange(el.id,event)}/>
+        <label className='w-48'>Enter arrival</label> <br />
+        <input className='border w-48 border-black px-1 py-2 rounded-xl' type='text' value={el.arrival} onChange={(event)=>handleInputArrivalChange(el.id,event)} />
+        <label className='w-48'>Enter flightno</label> <br />
+        <input className='border w-48  border-black px-1 py-2 rounded-xl' type='text' value={el.flightno}  onChange={(event)=>handleInputFlightnoChange(el.id,event)}/>
+        <label className='w-48'>Enter deptcity</label> <br />
+        <input className='border w-48 border-black px-1 py-2 rounded-xl' type='text' value={el.deptcity}  onChange={(event)=>handleInputdeptcityChange(el.id,event)} />
+        <label className='w-48'>Enter arrivalcity</label> <br />
+        <input className='border w-48 border-black px-1 py-2 rounded-xl' type='text' value={el.arrivalcity}  onChange={(event)=>handleInputarrivalcityChange(el.id,event)} />
+        <label className='w-48'>Enter PNR</label> <br />
+        <input className='border w-48 border-black px-1 py-2 rounded-xl' type='text' value={el.PNR}  onChange={(event)=>handleInputPNRChange(el.id,event)} />
+        </div>
       ))
      }
      <button  className='bg-blue-400 px-1 py-2 rounded-xl' onClick={updateData}>click To update</button>

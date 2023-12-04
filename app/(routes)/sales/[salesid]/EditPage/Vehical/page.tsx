@@ -19,7 +19,7 @@ const page =async( { params }: { params: IParams }) => {
     <div>
       {/* <Itinerary params={params}/> */}
       <Vehicle params={params}/>
-      <div className='flex items-center justify-center'>Edit this  form </div>
+      {/* <div className='flex items-center justify-center'>Edit this  form </div> */}
       <VehicalForm id={params.salesid} />
     </div>
   )

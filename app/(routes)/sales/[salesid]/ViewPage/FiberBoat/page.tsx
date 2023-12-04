@@ -87,31 +87,51 @@ const FiberBoat  = ( { params }: { params: IParams })=> {
             <TableCell>
               {/* {apiData?.time} */}
               {apiData.map((el:any,i)=>(
-                <div>{el.time}</div>
+                <div>
+                  <TableCell>
+                  {el.time}
+                  </TableCell>
+                  </div>
               ))}
             </TableCell>
             <TableCell>
               {/* {apiData?.arrival}/ */}
               {apiData.map((el:any,i)=>(
-                <div>{el.arrival}</div>
+                <div>
+                  <TableCell>
+                  {el.arrival}
+                  </TableCell>
+                  </div>
               ))}
             </TableCell>
             <TableCell>
               {/* {apiData?.stay} */}
               {apiData.map((el:any,i)=>(
-                <div>{el.stay}</div>
+                <div>
+                  <TableCell>
+                  {el.stay}
+                  </TableCell>
+                  </div>
               ))}
             </TableCell>
             <TableCell>
               {/* {apiData?.service} */}
               {apiData.map((el:any,i)=>(
-                <div>{el.service}</div>
+                <div>
+                  <TableCell>
+                  {el.service}
+                  </TableCell>
+                  </div>
               ))}
             </TableCell>
             <TableCell>
               {/* {apiData?.boattype} */}
               {apiData.map((el:any,i)=>(
-                <div>{el.boattype}</div>
+                <div>
+                  <TableCell>
+                  {el.boattype}
+                  </TableCell>
+                  </div>
               ))}
             </TableCell>
           </TableRow>

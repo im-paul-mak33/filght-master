@@ -19,7 +19,7 @@ const page =async( { params }: { params: IParams }) => {
   return (
     <div>
       <Flight params={params}/>
-      <div className='flex items-center justify-center'>Edit this  form </div>
+      {/* <div className='flex items-center justify-center'>Edit this  form </div> */}
       <FlightForm  id={params.salesid} />
     </div>
   )

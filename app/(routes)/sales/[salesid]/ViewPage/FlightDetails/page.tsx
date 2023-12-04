@@ -91,37 +91,62 @@ const Flight= ( { params }: { params: IParams }) => {
             <TableCell>
               {/* {apiData?.time} */}
               {apiData.map((el:any,i)=>(
-                <div>{el.time}</div>
+                <div>
+                  <TableCell>
+
+                  {el.time}
+                  </TableCell>
+                  </div>
               ))}
             </TableCell>
             <TableCell>
               {/* {apiData?.arrival} */}
               {apiData.map((el:any,i)=>(
-                <div>{el.arrival}</div>
+                <div>
+                  <TableCell>
+                  {el.arrival}
+                  </TableCell>
+                  </div>
               ))}
             </TableCell>
             <TableCell>
               {/* {apiData?.flightno} */}
               {apiData.map((el:any,i)=>(
-                <div>{el.flightno}</div>
+                <div>
+                  <TableCell>
+                  {el.flightno}
+                  </TableCell>
+                  </div>
               ))}
             </TableCell>
             <TableCell>
               {/* {apiData?.deptcity} */}
               {apiData.map((el:any,i)=>(
-                <div>{el.deptcity}</div>
+                <div>
+                  <TableCell>
+                  {el.deptcity}
+                  </TableCell>
+                  </div>
               ))}
             </TableCell>
             <TableCell>
               {/* {apiData?.arrivalcity} */}
               {apiData.map((el:any,i)=>(
-                <div>{el.arrivalcity}</div>
+                <div>
+                  <TableCell>
+                  {el.arrivalcity}
+                  </TableCell>
+                  </div>
               ))}
             </TableCell>
             <TableCell>
               {/* {apiData?.PNR} */}
               {apiData.map((el:any,i)=>(
-                <div>{el.PNR}</div>
+                <div>
+                  <TableCell>
+                  {el.PNR}
+                  </TableCell>
+                  </div>
               ))}
             </TableCell>
           </TableRow>

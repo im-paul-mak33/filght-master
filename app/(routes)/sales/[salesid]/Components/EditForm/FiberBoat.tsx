@@ -133,24 +133,25 @@ const FiberBoatForm:FC<ItenaryInputProps> = ({id}) => {
 
   
   return (
-    <div className='space-y-4'>
+    <div className='space-y-4 p-3'>
+         <div className='flex items-center justify-center'>Edit the FiberBoat Data</div>
      {
       apiData?.map((el:any,i)=>(
-        <>
+        <div className='flex flex-wrap space-x-6 space-y-2 border border-black p-4 rounded-xl'>
         <hr />
         {/* <div>{el.date}</div> */}
-        <label>Enter time</label>
-        <input type='text' className='border border-black px-1 py-2 rounded-xl' value={el.time}  onChange={(event)=>handleInputTimeChange(el.id,event)}/>
-        <label>Enter arrival</label>
-        <input type='text' className='border border-black px-1 py-2 rounded-xl' value={el.arrival} onChange={(event)=>handleInputArrivalChange(el.id,event)} />
-        <label>Enter stay</label>
-        <input type='text'className='border border-black px-1 py-2 rounded-xl' value={el.stay} onChange={(event)=>handleInputStayChange(el.id,event)}/>
-        <label>Enter service</label>
-        <input type='text' className='border border-black px-1 py-2 rounded-xl' value={el.service} onChange={(event)=>handleInputServiceChange(el.id,event)} />
-        <label>Enter boattype</label>
-        <input type='text' className='border border-black px-1 py-2 rounded-xl' value={el.boattype} onChange={(event)=>handleInputBoattypeChange(el.id,event)} />
+        <label className='w-48'>Enter time</label> <br />
+        <input type='text' className='border w-48 border-black px-1 py-2 rounded-xl' value={el.time}  onChange={(event)=>handleInputTimeChange(el.id,event)}/>
+        <label className='w-48'>Enter arrival</label> <br />
+        <input type='text' className='border w-48 border-black px-1 py-2 rounded-xl' value={el.arrival} onChange={(event)=>handleInputArrivalChange(el.id,event)} />
+        <label className='w-48'>Enter stay</label> <br />
+        <input type='text'className='border w-48 border-black px-1 py-2 rounded-xl' value={el.stay} onChange={(event)=>handleInputStayChange(el.id,event)}/>
+        <label className='w-48'>Enter service</label> <br />
+        <input type='text' className='border w-48 border-black px-1 py-2 rounded-xl' value={el.service} onChange={(event)=>handleInputServiceChange(el.id,event)} />
+        <label className='w-48'>Enter boattype</label> <br />
+        <input type='text' className='border w-48 border-black px-1 py-2 rounded-xl' value={el.boattype} onChange={(event)=>handleInputBoattypeChange(el.id,event)} />
         {/* <input type='text' value={el.PNR}  onChange={(event)=>handleInputPNRChange(el.id,event)} /> */}
-        </>
+        </div>
       ))
      }
      <button  className='bg-blue-400 px-1 py-2 rounded-xl' onClick={updateData}>click To update</button>

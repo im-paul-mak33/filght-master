@@ -113,20 +113,21 @@ const VehicalForm:FC<ItenaryInputProps> = ({id}) => {
 
   
   return (
-    <div className='space-y-4'>
+    <div className='space-y-4 p-3'>
+       <div className='flex items-center justify-center'>Edit the Vehicle Data</div>
      {
       apiData?.map((el:any,i)=>(
-        <>
+        <div className='flex flex-wrap space-x-10 space-y-2 border border-black p-4 rounded-xl'>
         <hr />
-        <label>Enter place</label>
-        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.place} onChange={(event)=>handleInputPlaceChange(el.id,event)}/>
-        <label>Enter Service</label>
-        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.service} onChange={(event)=>handleInputServiceChange(el.id,event)} />
-        <label>Enter ac_nonac</label>
-        <input className='border border-black px-1 py-2 rounded-xl' type='text' value={el.ac_nonac}  onChange={(event)=>handleInputAcNoACChange(el.id,event)}/>
-        <label>Enter vehical_type</label>
-        <input  className='border border-black px-1 py-2 rounded-xl' type='text' value={el.vehical_type}  onChange={(event)=>handleInputVehicleTypeChange(el.id,event)} />
-        </>
+        <label className='w-48'>Enter place</label> <br />
+        <input className='border w-48 border-black px-1 py-2 rounded-xl' type='text' value={el.place} onChange={(event)=>handleInputPlaceChange(el.id,event)}/>
+        <label className='w-48'>Enter Service</label> <br />
+        <input className='border w-48 border-black px-1 py-2 rounded-xl' type='text' value={el.service} onChange={(event)=>handleInputServiceChange(el.id,event)} />
+        <label className='w-48'>Enter ac_nonac</label> <br />
+        <input className='border w-48 border-black px-1 py-2 rounded-xl' type='text' value={el.ac_nonac}  onChange={(event)=>handleInputAcNoACChange(el.id,event)}/>
+        <label className='w-48'>Enter vehical_type</label> <br />
+        <input  className='border w-48 border-black px-1 py-2 rounded-xl' type='text' value={el.vehical_type}  onChange={(event)=>handleInputVehicleTypeChange(el.id,event)} />
+        </div>
       ))
      }
      <button  className='bg-blue-400 px-1 py-2 rounded-xl' onClick={updateData}>click To update</button>
