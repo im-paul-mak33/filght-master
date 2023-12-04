@@ -224,7 +224,7 @@ const SalesForm: FC<IdProps> = ({ id }) => {
           const data = await response.json();
           // Set the fetched data to the state
           const modifiedData: UserData[] = data.users.map(({ id, role ,name}: { id: string; role: string ; name:string }) => ({ id, role  ,name}));
-            setApiData(modifiedData);
+          setApiData(modifiedData);
         
         } else {
           throw new Error('Failed to fetch data');

@@ -1,7 +1,7 @@
 import DeskNav from "@/components/Custom/Navbar/DeskNav";
 import { ArrowLeftCircle } from "lucide-react";
 import Link from "next/link";
-import SalesForm from "../components/Form1/SalesForm";
+// import SalesForm from "../components/Form1/SalesForm";
 import { IParams } from "../page";
 import GuestInfo from "../components/previewData/GuestInfo";
 import Guest from "../components/previewData/Guest";
@@ -46,7 +46,7 @@ const page = ({ params }: { params: IParams }) => {
         </div>
       </div>
       <div className="px-8 py-2 bg-gray-50">
-        <SalesForm id={params.reservationid} />
+        {/* <SalesForm id={params.reservationid} /> */}
         <Guest paramsid={params.reservationid} />
       </div>
     </>
