@@ -10,7 +10,7 @@ const admin = async () => {
   if (session?.user.role !== "admin") {
     redirect("/home");
   }
-
+ 
   return (
     <>
       <DeskNav />

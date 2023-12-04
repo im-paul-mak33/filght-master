@@ -29,7 +29,7 @@ const AuthForm = () => {
   const router = useRouter();
   const [isLoading, setisLoading] = useState(false);
   if (data?.user) {
-    router.push("/home");
+    router.push("/sales");
   }
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),

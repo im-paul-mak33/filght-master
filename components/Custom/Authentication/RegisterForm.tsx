@@ -40,7 +40,7 @@ const RegisterForm = () => {
   const router = useRouter();
   const { data } = useSession();
   if (data?.user) {
-    router.push("/home");
+    router.push("/sales");
   }
 
   const form = useForm<z.infer<typeof formSchema>>({
