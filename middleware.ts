@@ -10,8 +10,8 @@ export default withAuth({
 
 export const config = {
     matcher: [
-        // "/home",
-        // "/sales",
-        // "/driver"
+        "/home",
+        "/sales",
+        "/driver"
     ]
 };
