@@ -1,6 +1,6 @@
 "use client"
 import { Book, Building2, Plane, User2, Users2 } from 'lucide-react';
-import React, { FC, useEffect, useState } from 'react'
+import React, {  useEffect, useState } from 'react'
 import { IParams } from "../../page";
 import DeskNav from '@/components/Custom/Navbar/DeskNav';
 type ItenaryInputProps = {

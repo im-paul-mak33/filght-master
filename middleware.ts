@@ -5,7 +5,7 @@ export default withAuth({
         signIn: "http://localhost:3000",
         // signIn: "https://filght.vercel.app/",
         // signIn: "https://bados.vercel.app/",
-    },
+    }
 });
 
 export const config = {

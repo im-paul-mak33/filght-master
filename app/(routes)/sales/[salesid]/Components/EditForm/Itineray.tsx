@@ -69,7 +69,7 @@
 //   const [isLoading, setIsLoading] = useState(false);
 //   const [data, setData] = useState<DateActivity[]>(dateData);
 //   console.log(data);
-  
+
 
 //   const onSubmit = async () => {
 //     setIsLoading(true);
@@ -371,24 +371,34 @@
 //   );
 // };
 "use client"
-import React, { FC,useEffect,useState,ChangeEvent } from 'react'
+import { Button } from '@/components/ui/button';
+import { Dialog, DialogClose, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { MoreHorizontal } from 'lucide-react';
+import React, { FC, useEffect, useState, ChangeEvent } from 'react'
 type ItenaryInputProps = {
   paramsid: string;
 }
 
 interface DataItem {
   id: number;
-  day:string,
-  date:string;
-  activity:string[];
+  day: string,
+  date: string;
+  activity: string[];
 }
-const Itineray:FC<ItenaryInputProps> = ({paramsid}) => {
+
+interface DataItemi {
+  id: number;
+  values: string[];
+}
+
+const Itineray: FC<ItenaryInputProps> = ({ paramsid }) => {
   const [recordInput, setRecordInput] = useState([])
   console.log(paramsid);
 
   const [apiData, setApiData] = useState<DataItem[]>([]);
   console.log(apiData);
-  
+
 
   useEffect(() => {
     const fetchGuestInfo = async () => {
@@ -398,12 +408,12 @@ const Itineray:FC<ItenaryInputProps> = ({paramsid}) => {
         if (response.ok) {
           const data = await response.json();
           // Set the fetched data to the state
-      
-            setApiData(data);
-        
+
+          setApiData(data);
+
         } else {
           throw new Error('Failed to fetch data');
-        } 
+        }
       } catch (error) {
         // Handle errors if any
         console.error('Error fetching data:', error);
@@ -424,13 +434,14 @@ const Itineray:FC<ItenaryInputProps> = ({paramsid}) => {
         },
         body: JSON.stringify(apiData),
       });
-  
+
       if (!response.ok) {
         throw new Error('Failed to update data');
       }
-  
+
       const result = await response.json();
       console.log('Data updated successfully:', result);
+      location.reload()
       // Handle success
     } catch (error) {
       console.error('Error while updating data:', error);
@@ -438,7 +449,7 @@ const Itineray:FC<ItenaryInputProps> = ({paramsid}) => {
     }
   }
 
-  const handleInputChange = (id:number, event:React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (id: number, event: React.ChangeEvent<HTMLInputElement>) => {
     const updatedData = apiData.map(el => {
       if (el.id === id) {
         return { ...el, day: event.target.value };
@@ -448,7 +459,7 @@ const Itineray:FC<ItenaryInputProps> = ({paramsid}) => {
     setApiData(updatedData);
   };
 
-  const handleInputstayChange = (id:number, event:React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputstayChange = (id: number, event: React.ChangeEvent<HTMLSelectElement>) => {
     const updatedData = apiData.map(el => {
       if (el.id === id) {
         return { ...el, stay: event.target.value };
@@ -472,31 +483,111 @@ const Itineray:FC<ItenaryInputProps> = ({paramsid}) => {
       return updatedData;
     });
   };
-  
-  
-  
 
 
-  
+
+
+
   return (
     <div className='space-y-4 p-3'>
       <div className='flex items-center justify-center'>Edit the Itinerary Data</div>
-     {
-      apiData?.map((el:any,i)=>(
-        <div className='flex flex-wrap space-x-6 space-y-2 border border-black p-4 rounded-xl'>
-        <hr />
-        <label className='w-48'>Enter date</label> <br />
-        <div key={el.id} className='w-48'>{el.date}</div>
-        <label className='w-48'>Enter delay</label> <br />
-        <input className='border w-48 border-black px-1 py-2 rounded-xl' type='text' value={el.day}  onChange={(event)=>handleInputChange(el.id,event)} />
-        <label className='w-48'>Enter Stay</label> <br />
-        <input className='border w-48 border-black px-1 py-2 rounded-xl' type='text' value={el.stay} onChange={(event)=>handleInputstayChange(el.id,event)}/>
-        <label className='w-48'>Enter activity</label> <br />
-        <input className='border w-48 border-black px-1 py-2 rounded-xl' type='text' value={el.activity}  onChange={(event)=>handleChange(el.id,event)}/>
-        </div>
-      ))
-     }
-     <button  className='bg-blue-400 px-1 py-2 rounded-xl' onClick={updateData}>click To update</button>
+      {
+        apiData?.map((el: any, i) => (
+          <div key={i}>
+            <hr />
+            {/* <label className='w-48'>Enter date</label> <br />
+            <div key={el.id} className='w-48'>{el.date}</div>
+            <label className='w-48'>Enter delay</label> <br />
+            <input className='border w-48 border-black px-1 py-2 rounded-xl' type='text' value={el.day} onChange={(event) => handleInputChange(el.id, event)} />
+            <label className='w-48'>Enter Stay</label> <br />
+            <input className='border w-48 border-black px-1 py-2 rounded-xl' type='text' value={el.stay} onChange={(event) => handleInputstayChange(el.id, event)} />
+            <label className='w-48'>Enter activity</label> <br />
+            <input className='border w-48 border-black px-1 py-2 rounded-xl' type='text' value={el.activity} onChange={(event) => handleChange(el.id, event)} /> */}
+
+
+
+
+            <Dialog>
+              <Table className='gap-y-16 mb-10 border rounded-xl'>
+                <TableHeader className='bg-[#F1F5F9] '>
+                  <TableRow>
+                    <TableHead>
+                      Date
+                    </TableHead>
+                    <TableHead >
+                      activity
+                    </TableHead>
+                    <TableHead>
+                      Stay
+                    </TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody >
+
+                  <TableRow >
+                    <TableCell>
+
+                      {
+                        <div>{el.date}</div>
+                      }
+
+                      {
+                        <div>{el.day}</div>
+                      }
+
+                    </TableCell>
+                    <TableCell className='flex space-x-3'>
+                      {/* {apiData?.stay} */}
+
+                      <div>
+                        {
+                          <div>{el.activity}</div>
+                        }
+                      </div>
+                      {/* <input type='text' className='border w-48 border-black px-1 py-2 rounded-xl' value={el.service} onChange={(event)=>handleInputServiceChange(el.id,event)} />
+     */}
+                      <DialogTrigger>
+
+                        <MoreHorizontal />
+                      </DialogTrigger>
+                      <DialogContent className="overflow-y-scroll max-h-[90vh] bg-white sm:max-w-[600px]">
+                        <DialogHeader className="pb-4">
+                          <DialogTitle>Edit Itinerary details</DialogTitle>
+                          <DialogDescription>Edit a Itinerary details</DialogDescription>
+                        </DialogHeader>
+                        <label htmlFor="">Activity</label>
+                        <input className='border w-48 border-black px-1 py-2 rounded-xl' type='text' value={el.activity} onChange={(event) => handleChange(el.id, event)} />
+                        <DialogFooter>
+                          <DialogClose>
+                            <Button type="submit">Save changes</Button>
+                          </DialogClose>
+                        </DialogFooter>
+                      </DialogContent>
+
+                    </TableCell>
+                    <TableCell>
+                      {/* {apiData?.activity} */}
+
+
+
+                      <div className='space-y-2'>
+                        <select className=' border   rounded-md hover:border-blue-600 outline-none border-gray-400 px-1 py-2 w-2/3  px-2 py-3 font-light  text-sm hover:border-2  text-sm' value={el.stay} onChange={(event) => handleInputstayChange(el.id, event)}>
+                          <option value="PB">PB</option>
+                          <option value="NL">NL</option>
+                          <option value="HL">HL</option>
+                          <option value="DP">DP</option>
+                        </select>
+                      </div>
+
+                    </TableCell>
+                  </TableRow>
+                </TableBody>
+              </Table>
+            </Dialog>
+          </div>
+        ))
+      }
+      <button className='bg-blue-400 px-1 py-2 rounded-xl' onClick={updateData}>click To update</button>
     </div>
   )
 }

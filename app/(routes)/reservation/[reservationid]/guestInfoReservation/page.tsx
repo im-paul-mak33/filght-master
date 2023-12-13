@@ -5,6 +5,7 @@ import Link from "next/link";
 import { IParams } from "../page";
 import GuestInfo from "../components/previewData/GuestInfo";
 import Guest from "../components/previewData/Guest";
+import SalesForm from "@/app/(routes)/sales/[salesid]/Components/Form1/SalesForm";
 
 
 interface ReservationData {
@@ -33,7 +34,7 @@ interface ReservationData {
 
 const page = ({ params }: { params: IParams }) => {
 
-  
+
   return (
     <>
       <DeskNav />
@@ -47,6 +48,7 @@ const page = ({ params }: { params: IParams }) => {
       </div>
       <div className="px-8 py-2 bg-gray-50">
         {/* <SalesForm id={params.reservationid} /> */}
+        <SalesForm id={params.reservationid} />
         <Guest paramsid={params.reservationid} />
       </div>
     </>
