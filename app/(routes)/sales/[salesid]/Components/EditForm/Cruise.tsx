@@ -306,7 +306,7 @@ const CruiseForm: FC<ItenaryInputProps> = ({ id }) => {
           </Dialog>
         ))
       }
-      <button onClick={updateData} className='bg-blue-400 px-1 py-2 rounded-xl'>click To update</button>
+      <button onClick={updateData} className='bg-blue-600 px-1 py-2 rounded-xl text-white' >click To update</button>
     </div>
   )
 }

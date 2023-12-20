@@ -420,7 +420,7 @@ const DiscountedForm: FC<ItenaryInputProps> = ({ id }) => {
           </Dialog>
         ))
       }
-      <button className='bg-blue-400 px-1 py-2 rounded-xl' onClick={updateData}>click To update</button>
+      <button className='bg-blue-600 px-1 py-2 rounded-xl text-white' onClick={updateData}>click To update</button>
     </div>
 
   )
