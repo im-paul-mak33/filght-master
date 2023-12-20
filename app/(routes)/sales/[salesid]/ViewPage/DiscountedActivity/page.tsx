@@ -58,134 +58,134 @@ const Discount = ({ params }: { params: IParams }) => {
   }, [params.salesid]); // Re-run effect when reservationid changes
   console.log(apiData);
   return (
-    <div className='mb-6'>
+    <div className='mb-6 p-4'>
       <DeskNav />
       <div className='flex items-center justify-center mt-8 mb-2'>
         Reviewed You'r Discount Data
       </div>
       <div className="rounded-md border">
-        <Table>
-          <TableHeader>
+        <Table className='rounded-xl'>
+          <TableHeader className='bg-[#F1F5F9] '>
             <TableRow>
-              <TableHead>
+              <TableHead className=' text-black'>
+                Time
+              </TableHead>
+              <TableHead className=' text-black'>
                 Activies
               </TableHead>
-              <TableHead>
-                time
+              <TableHead className=' text-black'>
+                Date
               </TableHead>
-              <TableHead>
-                date
+              <TableHead className=' text-black'>
+                Complimentary
               </TableHead>
-              <TableHead>
-                complimentary
-              </TableHead>
-              <TableHead>
-                remark
-              </TableHead>
-              <TableHead>
+              <TableHead className=' text-black'>
                 stay
               </TableHead>
-              <TableHead>
-                service
+              <TableHead className=' text-black'>
+                Service
               </TableHead>
-              <TableHead>
-                amount
+              <TableHead className=' text-black'>
+                Amount
               </TableHead>
-              <TableHead>
-                pax
+              <TableHead className=' text-black'>
+                Pax
               </TableHead>
+              <TableHead className=' text-black'>
+                Remark
+              </TableHead >
             </TableRow>
           </TableHeader>
 
-          <TableBody>
+          <TableBody className='space-y-2'>
             <TableRow>
-              <TableCell>
+              <TableCell className='space-y-4'>
                 {/* {apiData?.Activies} */}
                 {apiData.map((el: any, i) => (
                   <div>
-                    <TableCell>
-                      {el.Activies}
-                    </TableCell>
+
+                    {el.time}
+
                   </div>
                 ))}
               </TableCell>
-              <TableCell>
+              <TableCell className='space-y-4'>
                 {/* {apiData?.time} */}
                 {apiData.map((el: any, i) => (
                   <div>
-                    <TableCell>
-                      {el.time}
-                    </TableCell>
+
+                    {el.Activies}
+
                   </div>
                 ))}
               </TableCell>
-              <TableCell>
+              <TableCell className='space-y-4'>
                 {/* {apiData?.date} */}
                 {apiData.map((el: any, i) => (
                   <div>
-                    <TableCell>
-                      {el.date}
-                    </TableCell>
+
+                    {el.date}
+
                   </div>
                 ))}
               </TableCell>
-              <TableCell>
+              <TableCell className='space-y-4'>
                 {/* {apiData?.complimentary} */}
                 {apiData.map((el: any, i) => (
                   <div>
-                    <TableCell>
-                      {el.complimentary.toString()}
-                    </TableCell>
+
+                    {el.complimentary.toString()}
+
                   </div>
                 ))}
               </TableCell>
-              <TableCell>
+              <TableCell className='space-y-4'>
                 {/* {apiData?.remark} */}
                 {apiData.map((el: any, i) => (
                   <div>
-                    <TableCell>
-                      {el.remark}
-                    </TableCell>
+
+                    {el.vehical_type}
+
                   </div>
                 ))}
               </TableCell>
-              <TableCell>
+              <TableCell className='space-y-4'>
                 {/* {apiData?.vehical_type} */}
                 {apiData.map((el: any, i) => (
                   <div>
-                    <TableCell>
-                      {el.vehical_type}
-                    </TableCell>
+
+                    {el.service.toString()}
+
                   </div>
                 ))}
               </TableCell>
-              <TableCell>
+              <TableCell className='space-y-4'>
                 {/* {apiData?.service} */}
                 {apiData.map((el: any, i) => (
                   <div>
-                    <TableCell>
-                      {el.service.toString()}
-                    </TableCell>
+
+                    {el.amount}
+
                   </div>
                 ))}
               </TableCell>
-              <TableCell>
+              <TableCell className='space-y-4'>
                 {/* {apiData?.amount} */}
                 {apiData.map((el: any, i) => (
                   <div>
-                    <TableCell>
-                      {el.amount}
-                    </TableCell>
+
+                    {el.pax}
+
                   </div>
                 ))}
               </TableCell>
-              <TableCell>
+              <TableCell className='space-y-4'>
                 {/* {apiData?.pax} */}
                 {apiData.map((el: any, i) => (
                   <div>
-                    <TableCell>
-                      {el.pax}
-                    </TableCell>
+
+                    {el.remark}
+
                   </div>
                 ))}
               </TableCell>

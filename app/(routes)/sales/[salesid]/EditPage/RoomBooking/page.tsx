@@ -1,8 +1,8 @@
 import React from 'react'
-import RoomBookingForm  from '../../Components/EditForm/RoomBooking'
+import RoomBookingForm from '../../Components/EditForm/RoomBooking'
 import { getSingleGuest } from "@/actions/getSingleGuest";
 import { Props } from "../../Itinerary/page"
-import RoomBooking  from '../../ViewPage/RoomBooking/page';
+import RoomBooking from '../../ViewPage/RoomBooking/page';
 
 export type RoomBookingProps = {
   place?: string;
@@ -19,7 +19,7 @@ export type RoomBookingProps = {
   CWOB: string;
   comp_Child: string;
 };
-const page =  async(props: Props) => {
+const page = async (props: Props) => {
   const guestUser = await getSingleGuest(props.params.salesid);
   const processData = () => {
     let processedData = [];
@@ -71,9 +71,9 @@ const page =  async(props: Props) => {
 
   const dataArray: RoomBookingProps[] = processData();
   return (
-    <div>
-      <RoomBooking params={props.params}/>
-      <RoomBookingForm id={props.params.salesid}/>
+    <div className='space-y-8'>
+      <RoomBooking params={props.params} />
+      <RoomBookingForm id={props.params.salesid} />
     </div>
   )
 }

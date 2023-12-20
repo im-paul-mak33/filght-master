@@ -214,7 +214,7 @@ const RoomBookingForm: FC<ItenaryInputProps> = ({ id }) => {
 
   return (
     <div className=' p-3' >
-      <div className='flex items-center justify-center'>Edit the RoomBooking Data</div>
+      <div className='flex mb-4 items-center justify-center'>Edit the RoomBooking Data</div>
       {
         apiData?.map((el: any, i) => (
           <Dialog>
@@ -320,46 +320,46 @@ const RoomBookingForm: FC<ItenaryInputProps> = ({ id }) => {
 
                 <TableHeader className='bg-[#F1F5F9] ' >
                   <TableRow>
-                    <TableHead>
-                      place
+                    <TableHead className=' text-black' >
+                      Place
                     </TableHead>
-                    <TableHead>
-                      hotel
+                    <TableHead className=' text-black'>
+                      Hotel
                     </TableHead>
-                    <TableHead>
-                      choosedhotel
+                    <TableHead className=' text-black'>
+                      Choosed Hotel
                     </TableHead>
-                    <TableHead>
-                      roomType
+                    <TableHead className=' text-black'>
+                      Room Type
                     </TableHead>
-                    <TableHead>
-                      plan
+                    <TableHead className=' text-black'>
+                      Plan
                     </TableHead>
-                    <TableHead>
-                      rooms
+                    <TableHead className=' text-black'>
+                      Rooms
                     </TableHead>
-                    <TableHead>
+                    <TableHead className=' text-black'>
                       Ex_ADL
                     </TableHead>
-                    <TableHead>
+                    <TableHead className=' text-black'>
                       CWB
                     </TableHead>
-                    <TableHead>
+                    <TableHead className=' text-black'>
                       CWOB
                     </TableHead>
-                    <TableHead>
-                      comp_Child
+                    <TableHead className=' text-black'>
+                      Comp_Child
                     </TableHead>
-                    <TableHead>
-                      checkIn
+                    <TableHead className=' text-black'>
+                      CheckIn
                     </TableHead>
-                    <TableHead>
-                      checkOut
+                    <TableHead className=' text-black'>
+                      CheckOut
                     </TableHead>
-                    <TableHead>
-                      guestChoice
+                    <TableHead className=' text-black'>
+                      Guest Choice
                     </TableHead>
-                    <TableHead>
+                    <TableHead className=' text-black'>
                       Edit
                     </TableHead>
                   </TableRow>

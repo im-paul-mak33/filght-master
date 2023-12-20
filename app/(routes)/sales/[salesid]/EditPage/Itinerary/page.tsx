@@ -1,7 +1,7 @@
 import React from 'react'
-import Itinerary from '../../ViewPage/Itinerary/page' 
+import Itinerary from '../../ViewPage/Itinerary/page'
 import { IParams } from "../../page";
-import Iternairy  from "../../Components/EditForm/Itineray";
+import Iternairy from "../../Components/EditForm/Itineray";
 import { getSingleGuest } from '@/actions/getSingleGuest';
 import { format } from "date-fns";
 export type DateActivity = {
@@ -10,7 +10,7 @@ export type DateActivity = {
   activity: string[];
   stay: string;
 };
-const page =async( { params }: { params: IParams }) => {
+const page = async ({ params }: { params: IParams }) => {
   const guestUser = await getSingleGuest(params.salesid);
   const generateDateActivityArray = (
     startDate: string,
@@ -36,7 +36,7 @@ const page =async( { params }: { params: IParams }) => {
 
   let [data]: any = guestUser?.guestInfo || [];
 
-  
+
 
   const startDate = data && format(new Date(data.dateOfArrival), "PP");
   const endDate = data && format(new Date(data.dateOfDeparture), "PP");
@@ -44,9 +44,9 @@ const page =async( { params }: { params: IParams }) => {
 
   return (
     <div>
-      <Itinerary params={params}/>
-      <div className='flex items-center justify-center'>Edit this  form </div>
-      <Iternairy  paramsid={params.salesid} />
+      <Itinerary params={params} />
+      {/* <div className='flex items-center justify-center'>Edit this  form </div> */}
+      <Iternairy paramsid={params.salesid} />
     </div>
   )
 }

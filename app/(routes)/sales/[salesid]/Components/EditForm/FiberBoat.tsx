@@ -165,7 +165,7 @@ const FiberBoatForm: FC<ItenaryInputProps> = ({ id }) => {
 
   return (
     <div className='p-3'>
-      <div className='flex items-center justify-center mb-3'>Edit the FiberBoat Data</div>
+      <div className='flex items-center justify-center mb-3'>Edit the Fiber Boat Data</div>
 
 
 
@@ -223,22 +223,22 @@ const FiberBoatForm: FC<ItenaryInputProps> = ({ id }) => {
 
                 <TableHeader className='bg-[#F1F5F9] ' >
                   <TableRow className='bg-[#F1F5F9] '>
-                    <TableHead>
-                      time
+                    <TableHead className=' text-black'>
+                      Time
                     </TableHead>
-                    <TableHead>
-                      arrival
+                    <TableHead className=' text-black'>
+                      Arrival
                     </TableHead>
-                    <TableHead>
+                    <TableHead className=' text-black'>
                       Stay
                     </TableHead>
-                    <TableHead>
-                      service
+                    <TableHead className=' text-black'>
+                      Service
                     </TableHead>
-                    <TableHead>
-                      boattype
+                    <TableHead className=' text-black'>
+                      Boattype
                     </TableHead>
-                    <TableHead>
+                    <TableHead className=' text-black'>
                       Edit
                     </TableHead>
                   </TableRow>

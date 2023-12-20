@@ -182,7 +182,7 @@ const DiscountedForm: FC<ItenaryInputProps> = ({ id }) => {
 
   return (
     <div className=' p-3'>
-      <div className='flex items-center justify-center'>Edit the DiscountedForm Data</div>
+      <div className='flex items-center justify-center mb-4'>Edit the Discounted Form Data</div>
       {
         apiData?.map((el: any, i) => (
           <Dialog>
@@ -190,8 +190,8 @@ const DiscountedForm: FC<ItenaryInputProps> = ({ id }) => {
               <Table className='gap-y-16 mb-10 border rounded-xl'>
                 <DialogContent className="overflow-y-scroll max-h-[90vh] bg-white sm:max-w-[600px]">
                   <DialogHeader className="pb-4">
-                    <DialogTitle>Edit DiscountedForm details</DialogTitle>
-                    <DialogDescription>Edit a DiscountedForm details</DialogDescription>
+                    <DialogTitle>Edit Discounted Form details</DialogTitle>
+                    <DialogDescription>Edit a Discounted Form details</DialogDescription>
                   </DialogHeader>
                   {/* <label className='w-48'> Date</label> <br />
                   <div className='w-48'>{el.date}</div>
@@ -298,34 +298,34 @@ const DiscountedForm: FC<ItenaryInputProps> = ({ id }) => {
 
                 <TableHeader className='bg-[#F1F5F9]' >
                   <TableRow className=' '>
-                    <TableHead>
+                    <TableHead className=' text-black'>
                       Time
                     </TableHead>
-                    <TableHead>
+                    <TableHead className=' text-black'>
                       Activity
                     </TableHead>
-                    <TableHead>
+                    <TableHead className=' text-black'>
                       Date
                     </TableHead>
-                    <TableHead>
+                    <TableHead className=' text-black'>
                       Complimentary
                     </TableHead>
-                    <TableHead>
+                    <TableHead className=' text-black'>
                       Stay
                     </TableHead>
-                    <TableHead>
+                    <TableHead className=' text-black'>
                       Service
                     </TableHead>
-                    <TableHead>
+                    <TableHead className=' text-black'>
                       Amount
                     </TableHead>
-                    <TableHead>
+                    <TableHead className=' text-black'>
                       Pax
                     </TableHead>
-                    <TableHead>
+                    <TableHead className=' text-black'>
                       Remark
                     </TableHead>
-                    <TableHead>
+                    <TableHead className=' text-black'>
                       Edit
                     </TableHead>
                   </TableRow>

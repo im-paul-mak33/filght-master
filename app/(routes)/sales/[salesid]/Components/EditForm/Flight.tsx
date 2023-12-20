@@ -210,25 +210,25 @@ const FlightForm: FC<ItenaryInputProps> = ({ id }) => {
 
                 <TableHeader className='bg-[#F1F5F9]' >
                   <TableRow className='bg-[#F1F5F9]'>
-                    <TableHead>
-                      time
+                    <TableHead className=' text-black'>
+                      Time
                     </TableHead>
-                    <TableHead>
-                      arrival
+                    <TableHead className=' text-black'>
+                      Arrival
                     </TableHead>
-                    <TableHead>
+                    <TableHead className=' text-black'>
                       Flight No
                     </TableHead>
-                    <TableHead>
+                    <TableHead className=' text-black'>
                       Depticity
                     </TableHead>
-                    <TableHead>
+                    <TableHead className=' text-black'>
                       Arrivalicity
                     </TableHead>
-                    <TableHead>
+                    <TableHead className=' text-black'>
                       PNR
                     </TableHead>
-                    <TableHead>
+                    <TableHead className=' text-black'>
                       Edit
                     </TableHead>
                   </TableRow>

@@ -190,19 +190,19 @@ const VehicalForm: FC<ItenaryInputProps> = ({ id }) => {
 
                 <TableHeader className='bg-[#F1F5F9] ' >
                   <TableRow className='bg-[#F1F5F9] ' >
-                    <TableHead>
+                    <TableHead className=' text-black'>
                       Place
                     </TableHead>
-                    <TableHead>
-                      service
+                    <TableHead className=' text-black'>
+                      Service
                     </TableHead>
-                    <TableHead>
+                    <TableHead className=' text-black'>
                       ac_nonac
                     </TableHead>
-                    <TableHead>
-                      vehical_type
+                    <TableHead className=' text-black'>
+                      Vehical_Type
                     </TableHead>
-                    <TableHead>
+                    <TableHead className=' text-black'>
                       Edit
                     </TableHead>
                   </TableRow>

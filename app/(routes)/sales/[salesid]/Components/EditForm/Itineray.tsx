@@ -511,13 +511,13 @@ const Itineray: FC<ItenaryInputProps> = ({ paramsid }) => {
               <Table className='gap-y-16 mb-10 border rounded-xl'>
                 <TableHeader className='bg-[#F1F5F9] '>
                   <TableRow>
-                    <TableHead>
+                    <TableHead className=' text-black'>
                       Date
                     </TableHead>
-                    <TableHead >
-                      activity
+                    <TableHead className=' text-black' >
+                      Activity
                     </TableHead>
-                    <TableHead>
+                    <TableHead className=' text-black'>
                       Stay
                     </TableHead>
                   </TableRow>

@@ -232,25 +232,25 @@ const CruiseForm: FC<ItenaryInputProps> = ({ id }) => {
                 </DialogContent>
                 <TableHeader className='bg-[#F1F5F9] ' >
                   <TableRow className='bg-[#F1F5F9] ' >
-                    <TableHead>
-                      time
+                    <TableHead className=' text-black'>
+                      Time
                     </TableHead>
-                    <TableHead>
-                      route
+                    <TableHead className=' text-black'>
+                      Route
                     </TableHead>
-                    <TableHead>
-                      cruise
+                    <TableHead className=' text-black'>
+                      Cruise
                     </TableHead>
-                    <TableHead>
-                      journeyDate
+                    <TableHead className=' text-black'>
+                      Journey Date
                     </TableHead>
-                    <TableHead>
-                      seat_class
+                    <TableHead className=' text-black'>
+                      Seat_class
                     </TableHead>
-                    <TableHead>
+                    <TableHead className=' text-black'>
                       PNR
                     </TableHead>
-                    <TableHead>
+                    <TableHead className=' text-black'>
                       Edit
                     </TableHead>
                   </TableRow>
